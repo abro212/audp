@@ -1,0 +1,8 @@
+# robots.txt for PT. Aneka Usaha Dua Putra
+# https://duaputera.web.app
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://duaputera.web.app/sitemap.xml

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Language, ProductItem, LegalDocument } from './types';
 import { companyInfo } from './data/companyData';
 import { Navbar } from './components/Navbar';
@@ -17,10 +17,127 @@ import { NewsPage } from './pages/NewsPage';
 import { ContactPage } from './pages/ContactPage';
 import { MessageSquare } from 'lucide-react';
 
+const PAGE_SEO: Record<string, { title: { id: string; en: string }; desc: { id: string; en: string } }> = {
+  home: {
+    title: {
+      id: 'PT. Aneka Usaha Dua Putra | Solusi Pengadaan Barang, Fabrikasi & IT Terpercaya',
+      en: 'PT. Aneka Usaha Dua Putra | Trusted Industrial Supply, Fabrication & IT Solutions',
+    },
+    desc: {
+      id: 'PT. Aneka Usaha Dua Putra (AUDP) - Mitra terpercaya penyedia barang, jasa teknik mekanikal elektrikal, fabrikasi, dan solusi IT industri di Cikarang, Bekasi.',
+      en: 'PT. Aneka Usaha Dua Putra (AUDP) - Trusted industrial supply, mechanical electrical engineering, fabrication, and IT solutions partner in Cikarang, Bekasi.',
+    },
+  },
+  about: {
+    title: {
+      id: 'Tentang Kami & Profil Perusahaan | PT. Aneka Usaha Dua Putra',
+      en: 'About Us & Company Profile | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Profil lengkap, visi, misi, dan nilai integritas PT. Aneka Usaha Dua Putra sebagai mitra strategis pengadaan dan teknik industri terkemuka.',
+      en: 'Comprehensive profile, vision, mission, and core values of PT. Aneka Usaha Dua Putra as an esteemed industrial procurement and engineering partner.',
+    },
+  },
+  products: {
+    title: {
+      id: 'Katalog Produk & Pasokan Industri | PT. Aneka Usaha Dua Putra',
+      en: 'Product Catalog & Industrial Supply | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Jelajahi katalog produk suku cadang mesin, material industri, tools, alat keselamatan K3, dan instrumentasi pabrik berstandar tinggi.',
+      en: 'Explore our catalog of machine spare parts, industrial raw materials, tools, safety PPE, and instrumentation.',
+    },
+  },
+  'it-solutions': {
+    title: {
+      id: 'Solusi IT & Transformasi Digital Pabrik | PT. Aneka Usaha Dua Putra',
+      en: 'IT Solutions & Industrial Digital Transformation | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Layanan software custom industri, IoT sensor monitoring, infrastruktur jaringan pabrik, dan sistem ERP/WMS terintegrasi.',
+      en: 'Custom industrial software, IoT sensor monitoring, factory network infrastructure, and integrated ERP/WMS systems.',
+    },
+  },
+  keunggulan: {
+    title: {
+      id: 'Keunggulan & Kualitas Layanan | PT. Aneka Usaha Dua Putra',
+      en: 'Our Competitive Advantages | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Alasan memilih AUDP: kecepatan respon, jaminan garansi mutu, harga kompetitif, dan kepatuhan standar industri manufaktur.',
+      en: 'Why choose AUDP: fast response, quality assurance guarantee, competitive pricing, and strict compliance with manufacturing standards.',
+    },
+  },
+  legalitas: {
+    title: {
+      id: 'Legalitas & Sertifikasi Resmi Perusahaan | PT. Aneka Usaha Dua Putra',
+      en: 'Official Legality & Company Certifications | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Dokumen legalitas hukum resmi PT. Aneka Usaha Dua Putra: NIB, AHU Kemenkumham, NPWP, PKP, dan izin operasional lengkap.',
+      en: 'Official legal documentation of PT. Aneka Usaha Dua Putra: NIB, Ministry of Law approval, NPWP, PKP, and complete operational licenses.',
+    },
+  },
+  klien: {
+    title: {
+      id: 'Mitra & Portofolio Klien Industri | PT. Aneka Usaha Dua Putra',
+      en: 'Industrial Client Portfolio & Partners | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Daftar klien dan kemitraan terpercaya PT. Aneka Usaha Dua Putra di kawasan industri GIIC, MM2100, Jababeka, EJIP, dan Suryacipta.',
+      en: 'List of esteemed clients and trusted partnerships of PT. Aneka Usaha Dua Putra across major industrial estates.',
+    },
+  },
+  berita: {
+    title: {
+      id: 'Berita & Wawasan Industri Terkini | PT. Aneka Usaha Dua Putra',
+      en: 'Latest Industrial News & Industry Insights | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Artikel edukasi, tren manufaktur cerdas, panduan efisiensi supply chain, dan berita terkini dari PT. Aneka Usaha Dua Putra.',
+      en: 'Educational articles, smart manufacturing trends, supply chain efficiency guides, and latest corporate updates.',
+    },
+  },
+  kontak: {
+    title: {
+      id: 'Hubungi Kami & Permintaan Penawaran | PT. Aneka Usaha Dua Putra',
+      en: 'Contact Us & Request a Quote | PT. Aneka Usaha Dua Putra',
+    },
+    desc: {
+      id: 'Hubungi tim sales engineering kami di Cikarang Selatan, Bekasi. Dapatkan penawaran harga terbaik dan konsultasi teknis cepat.',
+      en: 'Contact our sales engineering team in Cikarang Selatan, Bekasi. Request a quotation and fast technical consultation.',
+    },
+  },
+};
+
 export const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('id');
   const [activePage, setActivePage] = useState<string>('home');
   
+  // Dynamic SEO meta handling on page or language change
+  useEffect(() => {
+    const pageMeta = PAGE_SEO[activePage] || PAGE_SEO['home'];
+    const title = pageMeta.title[language] || pageMeta.title['id'];
+    const desc = pageMeta.desc[language] || pageMeta.desc['id'];
+
+    document.title = title;
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', desc);
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', title);
+    }
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) {
+      ogDesc.setAttribute('content', desc);
+    }
+  }, [activePage, language]);
+
   // Modals state
   const [quotationModalOpen, setQuotationModalOpen] = useState(false);
   const [quotationCategory, setQuotationCategory] = useState<string>('Procurement Solution');
