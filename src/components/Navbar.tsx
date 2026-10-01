@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (query.includes('it') || query.includes('komputer') || query.includes('server') || query.includes('laptop') || query.includes('jaringan')) {
       setActivePage('it-solutions');
     } else if (query.includes('legal') || query.includes('npwp') || query.includes('nib') || query.includes('pajak')) {
-      setActivePage('legalitas');
+      setActivePage('about');
     } else if (query.includes('klien') || query.includes('client') || query.includes('mandiri') || query.includes('bri')) {
       setActivePage('klien');
     } else if (query.includes('tentang') || query.includes('visi') || query.includes('misi') || query.includes('profil')) {
@@ -217,20 +217,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
-            {/* Legalitas */}
-            <button
-              onClick={() => handleNavClick('legalitas')}
-              className={`px-2.5 xl:px-3 py-2 rounded-md text-xs font-semibold tracking-wide whitespace-nowrap transition-colors relative ${
-                activePage === 'legalitas' 
-                  ? 'text-navy-950 font-bold' 
-                  : 'text-slate-600 hover:text-navy-950 hover:bg-slate-100/70'
-              }`}
-            >
-              {language === 'id' ? 'Legalitas' : 'Legality'}
-              {activePage === 'legalitas' && (
-                <span className="absolute bottom-0 left-2.5 right-2.5 h-0.5 bg-gold-500 rounded-full" />
-              )}
-            </button>
 
             {/* Klien */}
             <button
@@ -432,15 +418,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <ChevronRight className={`w-4 h-4 ${activePage === 'keunggulan' ? 'text-gold-400' : 'text-slate-400'}`} />
             </button>
 
-            <button
-              onClick={() => handleNavClick('legalitas')}
-              className={`flex items-center justify-between w-full px-4 min-h-[44px] rounded-lg text-sm font-semibold transition-colors ${
-                activePage === 'legalitas' ? 'bg-navy-900 text-white' : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
-              }`}
-            >
-              <span>{language === 'id' ? 'Legalitas' : 'Legality'}</span>
-              <ChevronRight className={`w-4 h-4 ${activePage === 'legalitas' ? 'text-gold-400' : 'text-slate-400'}`} />
-            </button>
 
             <button
               onClick={() => handleNavClick('klien')}

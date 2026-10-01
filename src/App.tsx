@@ -11,7 +11,6 @@ import { AboutPage } from './pages/AboutPage';
 import { ProductsPage } from './pages/ProductsPage';
 import { ITSolutionsPage } from './pages/ITSolutionsPage';
 import { WhyUsPage } from './pages/WhyUsPage';
-import { LegalPage } from './pages/LegalPage';
 import { ClientsPage } from './pages/ClientsPage';
 import { NewsPage } from './pages/NewsPage';
 import { ContactPage } from './pages/ContactPage';
@@ -66,16 +65,6 @@ const PAGE_SEO: Record<string, { title: { id: string; en: string }; desc: { id: 
     desc: {
       id: 'Alasan memilih AUDP: kecepatan respon, jaminan garansi mutu, harga kompetitif, dan kepatuhan standar industri manufaktur.',
       en: 'Why choose AUDP: fast response, quality assurance guarantee, competitive pricing, and strict compliance with manufacturing standards.',
-    },
-  },
-  legalitas: {
-    title: {
-      id: 'Legalitas & Sertifikasi Resmi Perusahaan | PT. Aneka Usaha Dua Putra',
-      en: 'Official Legality & Company Certifications | PT. Aneka Usaha Dua Putra',
-    },
-    desc: {
-      id: 'Dokumen legalitas hukum resmi PT. Aneka Usaha Dua Putra: NIB, AHU Kemenkumham, NPWP, PKP, dan izin operasional lengkap.',
-      en: 'Official legal documentation of PT. Aneka Usaha Dua Putra: NIB, Ministry of Law approval, NPWP, PKP, and complete operational licenses.',
     },
   },
   klien: {
@@ -204,13 +193,6 @@ export const App: React.FC = () => {
           <WhyUsPage
             language={language}
             onOpenQuotation={() => handleOpenQuotation('Partnership Inquiry')}
-          />
-        )}
-
-        {activePage === 'legalitas' && (
-          <LegalPage
-            language={language}
-            onSelectDocument={(doc) => setSelectedLegalDoc(doc)}
           />
         )}
 

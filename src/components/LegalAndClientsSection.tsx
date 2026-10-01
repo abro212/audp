@@ -31,10 +31,10 @@ export const LegalAndClientsSection: React.FC<LegalAndClientsProps> = ({
                   {language === 'id' ? 'LEGALITAS PERUSAHAAN' : 'COMPANY LEGALITY'}
                 </div>
                 <button
-                  onClick={() => onNavigatePage('legalitas')}
+                  onClick={() => onSelectDocument(legalDocsList[0])}
                   className="inline-flex items-center gap-1 text-xs font-bold text-navy-900 hover:text-gold-600 transition-colors"
                 >
-                  <span>{language === 'id' ? 'Semua Dokumen' : 'All Documents'}</span>
+                  <span>{language === 'id' ? 'Lihat Dokumen' : 'View Documents'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

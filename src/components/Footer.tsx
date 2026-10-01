@@ -17,7 +17,6 @@ export const Footer: React.FC<FooterProps> = ({
     { id: 'about', label: { id: 'Tentang Kami', en: 'About Us' } },
     { id: 'products', label: { id: 'Produk & Layanan', en: 'Products & Services' } },
     { id: 'it-solutions', label: { id: 'Solusi IT', en: 'IT Solutions' } },
-    { id: 'legalitas', label: { id: 'Legalitas', en: 'Legality' } },
     { id: 'klien', label: { id: 'Klien', en: 'Clients' } },
     { id: 'berita', label: { id: 'Berita', en: 'News' } },
     { id: 'kontak', label: { id: 'Kontak', en: 'Contact' } },
