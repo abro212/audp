@@ -553,6 +553,15 @@ export const clientsList: ClientItem[] = [
       en: "State-Owned Commercial Banking"
     },
     logoUrl: "/assets/clients/bri.svg"
+  },
+  {
+    id: "mossi",
+    name: "PT. METAL ONE STEEL SERVICE INDONESIA",
+    sector: {
+      id: "Industri Baja & Manufaktur Logam",
+      en: "Steel Service & Metal Manufacturing"
+    },
+    logoUrl: "/assets/clients/mossi.png"
   }
 ];
 

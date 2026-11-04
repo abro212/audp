@@ -119,12 +119,12 @@ export const LegalAndClientsSection: React.FC<LegalAndClientsProps> = ({
               </p>
             </div>
 
-            {/* 5 Client Cards matching Mockup: responsive reflow for 5 items */}
-            <div className="grid grid-cols-2 min-[480px]:grid-cols-3 sm:grid-cols-5 gap-2.5">
+            {/* 6 Client Cards matching Mockup: balanced 3-column / 2-column grid */}
+            <div className="grid grid-cols-2 min-[480px]:grid-cols-3 sm:grid-cols-3 gap-2.5">
               {clientsList.map((client) => (
                 <div 
                   key={client.id}
-                  className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center min-h-[95px] last:col-span-2 min-[480px]:last:col-span-1"
+                  className="p-2 sm:p-2.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col items-center justify-between text-center min-h-[95px]"
                 >
                   <div className="w-full h-10 flex items-center justify-center mb-1">
                     <img 
