@@ -37,7 +37,7 @@ export const DashboardTab: React.FC<DashboardTabProps> = ({
   const stats = [
     {
       id: 'products',
-      label: 'Katalog Produk & Solusi',
+      label: 'Layanan',
       count: products.length,
       desc: 'Kategori pasokan industri & operasional',
       icon: Boxes,

@@ -67,7 +67,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
 
   const navMenuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'products', label: 'Katalog Produk & Solusi Pasokan', icon: Boxes },
+    { id: 'products', label: 'Layanan', icon: Boxes },
     { id: 'clients', label: 'Klien & Portofolio', icon: Users },
     { id: 'news', label: 'Berita & Artikel', icon: Newspaper },
     { id: 'legal', label: 'Legalitas & Dokumen', icon: FileCheck },

@@ -160,7 +160,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'cata
           }`}
         >
           <Boxes className={`w-4 h-4 ${activeSection === 'catalog' ? 'text-amber-400' : 'text-slate-400'}`} />
-          <span>Katalog Produk & Pasokan ({products.length} Kategori)</span>
+          <span>Katalog Layanan ({products.length} Kategori)</span>
         </button>
 
         <button
@@ -185,7 +185,7 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'cata
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
         <div>
           <h2 className="text-lg font-bold text-slate-900 tracking-tight">
-            Katalog Produk & Solusi Pasokan
+            Layanan
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
             Total {products.length} kategori layanan dan pasokan barang terdaftar.
