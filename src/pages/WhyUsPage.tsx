@@ -81,7 +81,7 @@ export const WhyUsPage: React.FC<WhyUsPageProps> = ({
         {/* Value Proposition from Compro Page 9 */}
         <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
           <div className="max-w-2xl space-y-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-50 border border-amber-200 text-[11px] font-bold text-amber-800 tracking-wider uppercase">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase">
               {language === 'id' ? 'NILAI LEBIH BISNIS' : 'VALUE PROPOSITION'}
             </div>
             <h2 className="text-2xl font-extrabold text-navy-950">

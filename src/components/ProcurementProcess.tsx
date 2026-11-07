@@ -1,7 +1,7 @@
 import React from 'react';
 import { Language } from '../types';
 import { procurementSteps } from '../data/companyData';
-import { Send, Search, CheckSquare, FileText, ShoppingCart, Truck } from 'lucide-react';
+import { Send, Search, CheckSquare, FileText, ShoppingCart, Truck, ChevronRight } from 'lucide-react';
 
 interface ProcurementProcessProps {
   language: Language;
@@ -14,13 +14,13 @@ export const ProcurementProcess: React.FC<ProcurementProcessProps> = ({
 }) => {
   const getStepIcon = (index: number) => {
     switch (index) {
-      case 0: return <Send className="w-5 h-5 text-blue-600" />;
-      case 1: return <Search className="w-5 h-5 text-blue-600" />;
-      case 2: return <CheckSquare className="w-5 h-5 text-blue-600" />;
-      case 3: return <FileText className="w-5 h-5 text-gold-600" />;
-      case 4: return <ShoppingCart className="w-5 h-5 text-blue-600" />;
-      case 5: return <Truck className="w-5 h-5 text-emerald-600" />;
-      default: return <Send className="w-5 h-5 text-blue-600" />;
+      case 0: return <Send className="w-5 h-5 text-navy-900" />;
+      case 1: return <Search className="w-5 h-5 text-navy-900" />;
+      case 2: return <CheckSquare className="w-5 h-5 text-navy-900" />;
+      case 3: return <FileText className="w-5 h-5 text-navy-900" />;
+      case 4: return <ShoppingCart className="w-5 h-5 text-navy-900" />;
+      case 5: return <Truck className="w-5 h-5 text-navy-900" />;
+      default: return <Send className="w-5 h-5 text-navy-900" />;
     }
   };
 
@@ -30,7 +30,7 @@ export const ProcurementProcess: React.FC<ProcurementProcessProps> = ({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-blue-50 border border-blue-200 text-[11px] font-bold text-blue-800 tracking-wider uppercase mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase mb-2">
             {language === 'id' ? 'ALUR PENGADAAN' : 'WORKFLOW PROCESS'}
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-950 tracking-tight">
@@ -38,8 +38,8 @@ export const ProcurementProcess: React.FC<ProcurementProcessProps> = ({
           </h3>
           <p className="text-xs sm:text-sm text-slate-500 mt-2">
             {language === 'id'
-              ? 'Tahapan pengadaan terstruktur dari pengajuan spesifikasi hingga barang diterima di lokasi Anda.'
-              : 'Structured procurement stages from technical specification review to secure on-site delivery.'}
+              ? 'Tahapan pengadaan terstruktur dari telaah spesifikasi hingga barang diterima di lokasi Anda.'
+              : 'Structured procurement stages from technical review to verified on-site delivery.'}
           </p>
         </div>
 
@@ -48,14 +48,14 @@ export const ProcurementProcess: React.FC<ProcurementProcessProps> = ({
           {procurementSteps.map((step, idx) => (
             <div 
               key={step.step}
-              className="relative p-4 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-blue-300 hover:shadow-sm transition-all flex flex-col justify-between"
+              className="relative p-4 rounded-xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-slate-300 hover:shadow-xs transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-9 h-9 rounded-lg bg-white shadow-2xs border border-slate-200 flex items-center justify-center">
                     {getStepIcon(idx)}
                   </div>
-                  <span className="text-xs font-black text-gold-600 bg-gold-50 px-2 py-0.5 rounded border border-gold-200">
+                  <span className="text-xs font-bold text-slate-800 bg-slate-200/80 px-2 py-0.5 rounded border border-slate-300">
                     {step.step}
                   </span>
                 </div>
@@ -70,8 +70,8 @@ export const ProcurementProcess: React.FC<ProcurementProcessProps> = ({
               </div>
 
               {idx < 5 && (
-                <div className="hidden lg:block absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-slate-300 text-xs">
-                  →
+                <div className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 z-10 text-slate-400">
+                  <ChevronRight className="w-4 h-4" />
                 </div>
               )}
             </div>

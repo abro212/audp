@@ -1,7 +1,7 @@
 import React from 'react';
 import { Language } from '../types';
 import { companyInfo } from '../data/companyData';
-import { ArrowRight, FileText, Zap, Boxes, ShieldCheck, Handshake } from 'lucide-react';
+import { ArrowRight, FileText, Zap, Boxes, ShieldCheck, Handshake, Check } from 'lucide-react';
 
 interface HeroProps {
   language: Language;
@@ -78,16 +78,16 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Small trust badges */}
               <div className="pt-2 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs text-slate-400 border-t border-navy-800/80">
                 <span className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-gold-400 font-bold">✓</span> Established 2023
+                  <Check className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" /> Established 2023
                 </span>
                 <span className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-gold-400 font-bold">✓</span> General Trading
+                  <Check className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" /> General Trading
                 </span>
                 <span className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-gold-400 font-bold">✓</span> One-Stop Procurement
+                  <Check className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" /> One-Stop Procurement
                 </span>
                 <span className="flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="text-gold-400 font-bold">✓</span> Fast Response
+                  <Check className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" /> Fast Response
                 </span>
               </div>
             </div>
@@ -116,8 +116,8 @@ export const Hero: React.FC<HeroProps> = ({
                   </div>
                   <p className="text-[10px] sm:text-xs text-slate-300 leading-relaxed font-normal line-clamp-3 sm:line-clamp-none">
                     {language === 'id'
-                      ? "Terus berkembang menjadi mitra pengadaan terpercaya di Indonesia dengan solusi menyeluruh untuk kebutuhan operasional perusahaan."
-                      : "Steadily growing as Indonesia's trusted procurement partner providing end-to-end solutions for operational excellence."}
+                      ? "Mitra pengadaan terpercaya dengan solusi menyeluruh untuk kebutuhan operasional perusahaan."
+                      : "Trusted corporate procurement partner delivering complete operational supply solutions."}
                   </p>
                 </div>
 
@@ -134,8 +134,8 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="grid grid-cols-1 min-[440px]:grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
             
             <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-navy-800">
-                <Zap className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200/90 flex items-center justify-center flex-shrink-0 text-navy-900">
+                <Zap className="w-5 h-5 text-navy-900" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-bold text-navy-950 leading-tight">
@@ -145,8 +145,8 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-navy-800">
-                <Boxes className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200/90 flex items-center justify-center flex-shrink-0 text-navy-900">
+                <Boxes className="w-5 h-5 text-navy-900" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-bold text-navy-950 leading-tight">
@@ -156,19 +156,19 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-navy-800">
-                <ShieldCheck className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200/90 flex items-center justify-center flex-shrink-0 text-navy-900">
+                <ShieldCheck className="w-5 h-5 text-navy-900" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-bold text-navy-950 leading-tight">
-                  {language === 'id' ? 'Produk Berkualitas Sesuai Kebutuhan' : 'Certified Quality Matched to Specs'}
+                  {language === 'id' ? 'Produk Sesuai Standar Mutu' : 'Certified Quality Matched to Specs'}
                 </h4>
               </div>
             </div>
 
             <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 text-navy-800">
-                <Handshake className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200/90 flex items-center justify-center flex-shrink-0 text-navy-900">
+                <Handshake className="w-5 h-5 text-navy-900" />
               </div>
               <div>
                 <h4 className="text-xs sm:text-sm font-bold text-navy-950 leading-tight">

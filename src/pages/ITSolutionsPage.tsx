@@ -33,7 +33,7 @@ export const ITSolutionsPage: React.FC<ITSolutionsPageProps> = ({
         {/* Header Banner */}
         <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 rounded-2xl p-6 sm:p-10 md:p-12 text-white shadow-xl border border-navy-800 relative overflow-hidden">
           <div className="relative z-10 max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-500/20 border border-amber-400/40 text-[11px] font-bold text-gold-400 tracking-wider uppercase">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-navy-900 border border-gold-500/40 text-[11px] font-bold text-gold-400 tracking-wider uppercase">
               {language === 'id' ? 'SOLUSI IT & PENGADAAN PERANGKAT' : 'IT SOLUTIONS & EQUIPMENT PROCUREMENT'}
             </div>
             <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -53,8 +53,8 @@ export const ITSolutionsPage: React.FC<ITSolutionsPageProps> = ({
         </div>
 
         {/* Clear Positioning Notice as requested by User Prompt */}
-        <div className="p-4 sm:p-5 rounded-xl bg-blue-50/80 border border-blue-200 text-slate-800 flex items-start gap-3 text-xs leading-relaxed">
-          <AlertCircle className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-100 border border-slate-300 text-slate-800 flex items-start gap-3 text-xs leading-relaxed">
+          <AlertCircle className="w-5 h-5 text-navy-950 flex-shrink-0 mt-0.5" />
           <div>
             <span className="font-extrabold text-navy-950 block mb-0.5">
               {language === 'id' ? 'Fokus Layanan: IT Product Procurement & Sourcing' : 'Service Positioning: IT Product Procurement & Hardware Sourcing'}

@@ -61,7 +61,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               {aboutContent.story[language]}
             </p>
 
-            <div className="p-4 rounded-xl bg-blue-50/60 border-l-4 border-blue-600 space-y-1.5">
+            <div className="p-4 rounded-xl bg-slate-100 border-l-4 border-navy-950 space-y-1.5">
               <h4 className="text-xs font-bold text-navy-950 uppercase tracking-wider">
                 {language === 'id' ? 'Bukan Sekadar Supplier, Kami Adalah Solution Provider' : 'Not Just a Supplier, But a Dedicated Solution Provider'}
               </h4>
@@ -123,7 +123,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs space-y-2">
-              <span className="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+              <span className="text-xs font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                 Tagline Resmi
               </span>
               <h4 className="text-lg font-extrabold text-navy-950">
@@ -141,7 +141,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-navy-950 flex items-center justify-center">
                 <Target className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-extrabold text-navy-950">
@@ -155,7 +155,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
           <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-navy-950 flex items-center justify-center">
                 <Compass className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-extrabold text-navy-950">
@@ -164,7 +164,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
                 {aboutContent.mission[language].map((m, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-navy-900 mt-0.5 flex-shrink-0" />
                     <span>{m}</span>
                   </li>
                 ))}
@@ -190,7 +190,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             {coreValuesList.map((cv) => (
               <div key={cv.letter} className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-navy-950 flex items-center justify-center mb-3">
                     {renderFASTIcon(cv.iconName)}
                   </div>
                   <div className="text-2xl font-black text-gold-600 mb-1">

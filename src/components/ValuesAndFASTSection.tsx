@@ -10,20 +10,20 @@ interface ValuesAndFASTProps {
 export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language }) => {
   const renderFASTIcon = (name: string) => {
     switch (name) {
-      case 'Zap': return <Zap className="w-5 h-5 text-amber-500" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-amber-500" />;
-      case 'Award': return <Award className="w-5 h-5 text-amber-500" />;
-      case 'Handshake': return <Handshake className="w-5 h-5 text-amber-500" />;
-      default: return <Zap className="w-5 h-5 text-amber-500" />;
+      case 'Zap': return <Zap className="w-5 h-5 text-navy-900" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-navy-900" />;
+      case 'Award': return <Award className="w-5 h-5 text-navy-900" />;
+      case 'Handshake': return <Handshake className="w-5 h-5 text-navy-900" />;
+      default: return <Zap className="w-5 h-5 text-navy-900" />;
     }
   };
 
   const renderValPropIcon = (name: string) => {
     switch (name) {
-      case 'Clock': return <Clock className="w-5 h-5 text-blue-600" />;
-      case 'MessageSquare': return <MessageSquare className="w-5 h-5 text-blue-600" />;
-      case 'Boxes': return <Boxes className="w-5 h-5 text-blue-600" />;
-      default: return <Clock className="w-5 h-5 text-blue-600" />;
+      case 'Clock': return <Clock className="w-5 h-5 text-navy-900" />;
+      case 'MessageSquare': return <MessageSquare className="w-5 h-5 text-navy-900" />;
+      case 'Boxes': return <Boxes className="w-5 h-5 text-navy-900" />;
+      default: return <Clock className="w-5 h-5 text-navy-900" />;
     }
   };
 
@@ -39,7 +39,7 @@ export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language })
              ========================================= */}
           <div className="lg:col-span-6 space-y-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-100/60 border border-amber-200 text-[11px] font-bold text-amber-800 tracking-wider uppercase mb-1.5">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase mb-1.5">
                 {language === 'id' ? 'VALUE PROPOSITION' : 'VALUE PROPOSITION'}
               </div>
               <h3 className="text-xl sm:text-2xl font-extrabold text-navy-950 tracking-tight">
@@ -47,7 +47,7 @@ export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language })
               </h3>
               <p className="text-xs text-slate-500 mt-1">
                 {language === 'id' 
-                  ? 'Tiga keunggulan utama dalam menjaga efisiensi dan kelancaran pengadaan perusahaan Anda.' 
+                  ? 'Tiga keunggulan utama menjaga efisiensi dan kelancaran pengadaan perusahaan Anda.' 
                   : 'Three key operational advantages ensuring procurement efficiency for your enterprise.'}
               </p>
             </div>
@@ -57,11 +57,11 @@ export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language })
               {valuePropsList.map((val) => (
                 <div 
                   key={val.number}
-                  className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-xs hover:border-blue-300 transition-all flex flex-col justify-between"
+                  className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200/80 flex items-center justify-center">
                         {renderValPropIcon(val.iconName)}
                       </div>
                       <span className="text-lg font-black text-slate-400">
@@ -87,7 +87,7 @@ export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language })
              ========================================= */}
           <div className="lg:col-span-6 space-y-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-blue-50 border border-blue-200 text-[11px] font-bold text-blue-800 tracking-wider uppercase mb-1.5">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase mb-1.5">
                 {language === 'id' ? 'CORE VALUES' : 'CORE VALUES'}
               </div>
               <h3 className="text-xl sm:text-2xl font-extrabold text-navy-950 tracking-tight">
@@ -95,7 +95,7 @@ export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language })
               </h3>
               <p className="text-xs text-slate-500 mt-1">
                 {language === 'id'
-                  ? 'Prinsip pelayanan yang kami terapkan pada setiap transaksi pengadaan.'
+                  ? 'Prinsip pelayanan pada setiap transaksi pengadaan perusahaan.'
                   : 'Operational principles applied across every corporate order.'}
               </p>
             </div>
@@ -105,10 +105,10 @@ export const ValuesAndFASTSection: React.FC<ValuesAndFASTProps> = ({ language })
               {coreValuesList.map((cv) => (
                 <div 
                   key={cv.letter}
-                  className="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-xs hover:border-amber-300 transition-all flex flex-col justify-between text-left"
+                  className="p-3.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs hover:shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between text-left"
                 >
                   <div>
-                    <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center mb-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200/80 flex items-center justify-center mb-2.5">
                       {renderFASTIcon(cv.iconName)}
                     </div>
                     

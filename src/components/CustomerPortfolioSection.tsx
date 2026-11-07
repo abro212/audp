@@ -58,7 +58,7 @@ export const CustomerPortfolioSection: React.FC<CustomerPortfolioProps> = ({
         >
           <div className="max-w-2xl">
             {/* Eyebrow Label */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-blue-50 border border-blue-200/80 text-[11px] font-bold text-blue-800 tracking-wider uppercase mb-2 sm:mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase mb-2 sm:mb-3">
               {language === 'id' ? 'KLIEN KAMI' : 'OUR CLIENTS'}
             </div>
 
@@ -113,7 +113,7 @@ export const CustomerPortfolioSection: React.FC<CustomerPortfolioProps> = ({
 
               {/* Industry Sector Badge */}
               <div className="mb-2">
-                <span className="inline-block text-[10px] font-semibold text-blue-700 bg-blue-50/90 px-2.5 py-0.5 rounded-full border border-blue-200/60">
+                <span className="inline-block text-[10px] font-semibold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200">
                   {client.sector[language]}
                 </span>
               </div>
@@ -140,8 +140,8 @@ export const CustomerPortfolioSection: React.FC<CustomerPortfolioProps> = ({
           }`}
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center flex-shrink-0 shadow-xs">
-              <ShieldCheck className="w-5 h-5 text-emerald-600" />
+            <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center flex-shrink-0 shadow-xs">
+              <ShieldCheck className="w-5 h-5 text-navy-900" />
             </div>
             <div>
               <h4 className="text-xs sm:text-sm font-bold text-navy-950">
@@ -156,7 +156,7 @@ export const CustomerPortfolioSection: React.FC<CustomerPortfolioProps> = ({
           </div>
 
           <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-gold-500 animate-pulse" />
             <span>Verified Corporate Partnerships</span>
           </div>
         </div>

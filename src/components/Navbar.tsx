@@ -184,10 +184,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   <div className="border-t border-slate-100 my-1" />
                   <button
                     onClick={() => handleNavClick('it-solutions')}
-                    className="w-full text-left px-4 py-2 text-xs font-bold text-amber-700 hover:bg-amber-50/60 flex items-center justify-between group"
+                    className="w-full text-left px-4 py-2 text-xs font-bold text-navy-950 hover:bg-slate-50 flex items-center justify-between group"
                   >
                     <span className="flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-amber-600" />
+                      <Cpu className="w-3.5 h-3.5 text-navy-900" />
                       <span>Solusi IT & Equipment</span>
                     </span>
                     <span className="text-[9px] bg-gold-500 text-navy-950 font-black px-1.5 py-0.2 rounded">NEW</span>

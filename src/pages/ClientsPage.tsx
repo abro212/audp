@@ -49,7 +49,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({
                   />
                 </div>
                 
-                <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                <span className="text-[10px] font-semibold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-md border border-slate-200">
                   {client.sector[language]}
                 </span>
 
@@ -59,7 +59,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-xs text-slate-500">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-navy-900" />
                 <span>{language === 'id' ? 'Mitra Pengadaan Terverifikasi' : 'Verified Procurement Partner'}</span>
               </div>
             </div>

@@ -114,9 +114,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
               <div className="space-y-4">
                 <a 
                   href={`tel:${companyInfo.phoneRaw}`}
-                  className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-blue-50/60 hover:border-blue-200 transition-colors group"
+                  className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-slate-100 hover:border-slate-300 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-navy-950 flex-shrink-0 group-hover:bg-navy-950 group-hover:text-white transition-colors">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -131,9 +131,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
 
                 <a 
                   href={`mailto:${companyInfo.email}`}
-                  className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-blue-50/60 hover:border-blue-200 transition-colors group"
+                  className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-slate-100 hover:border-slate-300 transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-blue-600 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-navy-950 flex-shrink-0 group-hover:bg-navy-950 group-hover:text-white transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -176,7 +176,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
             </div>
 
             {/* Response Time Badge */}
-            <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-950 flex items-center gap-3.5">
+            <div className="p-5 rounded-2xl bg-slate-100 border border-slate-300 text-slate-900 flex items-center gap-3.5">
               <Clock className="w-6 h-6 text-gold-600 flex-shrink-0" />
               <div className="text-xs">
                 <span className="font-extrabold block text-navy-950">Fast Response Guarantee</span>
@@ -205,7 +205,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
 
             {submitted ? (
               <div className="py-12 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-slate-100 border border-slate-300 text-navy-950 mx-auto flex items-center justify-center">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
                 <h4 className="text-xl font-extrabold text-navy-950">

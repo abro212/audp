@@ -101,7 +101,7 @@ export const NewsPage: React.FC<NewsPageProps> = ({ language }) => {
               
               <div className="p-6 space-y-4">
                 <div className="flex items-center gap-3 text-xs text-slate-400">
-                  <span className="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
+                  <span className="font-semibold text-slate-800 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-md">
                     {selectedNews.category[language]}
                   </span>
                   <span>{selectedNews.date}</span>

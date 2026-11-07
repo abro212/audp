@@ -43,7 +43,7 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
             
             {/* Top About block */}
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-amber-50 border border-amber-200/80 text-[11px] font-bold text-amber-800 tracking-wider uppercase">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase">
                 {language === 'id' ? 'TENTANG KAMI' : 'ABOUT US'}
               </div>
 
@@ -55,10 +55,6 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                 {aboutContent.story[language]}
-              </p>
-
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                {aboutContent.approach[language]}
               </p>
 
               <div>
@@ -76,8 +72,8 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
             <div className="space-y-4 pt-4 border-t border-slate-100">
               
               {/* Visi Card */}
-              <div className="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200/70 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
-                <div className="w-10 h-10 rounded-full bg-blue-100/80 text-blue-700 flex items-center justify-center flex-shrink-0">
+              <div className="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-slate-300 hover:bg-white transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-navy-900 flex items-center justify-center flex-shrink-0">
                   <Target className="w-5 h-5" />
                 </div>
                 <div>
@@ -91,8 +87,8 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
               </div>
 
               {/* Misi Card */}
-              <div className="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200/70 hover:border-blue-200 hover:bg-blue-50/40 transition-colors">
-                <div className="w-10 h-10 rounded-full bg-amber-100/80 text-amber-700 flex items-center justify-center flex-shrink-0">
+              <div className="flex gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-slate-300 hover:bg-white transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-navy-900 flex items-center justify-center flex-shrink-0">
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
@@ -102,7 +98,7 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
                   <ul className="space-y-1.5 text-xs text-slate-600">
                     {aboutContent.mission[language].map((m, idx) => (
                       <li key={idx} className="flex items-start gap-1.5">
-                        <CheckCircle className="w-3.5 h-3.5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-3.5 h-3.5 text-navy-900 mt-0.5 flex-shrink-0" />
                         <span className="leading-tight">{m}</span>
                       </li>
                     ))}
@@ -122,7 +118,7 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
             {/* Header of Products */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-5 gap-2">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-blue-50 border border-blue-200/80 text-[11px] font-bold text-blue-800 tracking-wider uppercase mb-1.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 border border-slate-300 text-[11px] font-bold text-navy-950 tracking-wider uppercase mb-1.5">
                   {language === 'id' ? 'PRODUK & LAYANAN' : 'PRODUCTS & SERVICES'}
                 </div>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-navy-950 tracking-tight">
@@ -162,7 +158,7 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
                     }}
                     className={`group relative flex flex-col min-w-0 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
                       isIT 
-                        ? 'border-2 border-amber-400 bg-amber-50/20 shadow-sm hover:shadow-md ring-2 ring-amber-400/20' 
+                        ? 'border-2 border-amber-500 bg-white shadow-sm hover:shadow-md' 
                         : 'border border-slate-200 bg-white hover:border-slate-300 shadow-2xs hover:shadow-sm'
                     }`}
                   >
