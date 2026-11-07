@@ -24,8 +24,7 @@ import {
   MapPin,
   Smartphone,
   Monitor,
-  TrendingUp,
-  CheckCircle2
+  TrendingUp
 } from 'lucide-react';
 
 interface DashboardTabProps {
@@ -178,47 +177,17 @@ export const DashboardTab: React.FC<DashboardTabProps> = ({
       <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs space-y-6">
         
         {/* Analytics Header Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
-          <div className="flex items-start sm:items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shrink-0">
-              <BarChart3 className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 className="text-base font-bold text-slate-900 tracking-tight">
-                  Statistik Trafik & Pengunjung Website
-                </h3>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                  <span>GA4 Terhubung</span>
-                </span>
-              </div>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Integrasi resmi Google Analytics 4 (<span className="font-mono text-slate-700 font-semibold">{analytics.gaMeasurementId}</span>) & Cloud Firestore.
-              </p>
-            </div>
+        <div className="flex items-start sm:items-center gap-3 border-b border-slate-100 pb-4">
+          <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600 shrink-0">
+            <BarChart3 className="w-5 h-5" />
           </div>
-
-          {/* Quick Links to Google Analytics / Firebase Console */}
-          <div className="flex flex-wrap items-center gap-2">
-            <a
-              href="https://analytics.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold transition-colors cursor-pointer"
-            >
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-              <span>Google Analytics</span>
-            </a>
-            <a
-              href="https://console.firebase.google.com/project/duaputera/analytics"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white text-xs font-bold transition-colors cursor-pointer"
-            >
-              <ExternalLink className="w-3.5 h-3.5 text-amber-400" />
-              <span>Firebase Analytics</span>
-            </a>
+          <div>
+            <h3 className="text-base font-bold text-slate-900 tracking-tight">
+              Statistik Trafik & Pengunjung Website
+            </h3>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Live terIntegrasi Google Analytics.
+            </p>
           </div>
         </div>
 
