@@ -16,6 +16,7 @@ import { NewsPage } from './pages/NewsPage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminPortal } from './admin/AdminPortal';
 import { syncFromFirestore } from './services/adminDataService';
+import { recordPageView } from './services/analyticsService';
 import { MessageSquare } from 'lucide-react';
 
 const PAGE_SEO: Record<string, { title: { id: string; en: string }; desc: { id: string; en: string } }> = {
@@ -159,6 +160,9 @@ export const App: React.FC = () => {
     if (ogDesc) {
       ogDesc.setAttribute('content', desc);
     }
+
+    // Record visitor page view to Google Analytics & internal metrics
+    recordPageView(activePage);
   }, [activePage, language]);
 
   // Modals state

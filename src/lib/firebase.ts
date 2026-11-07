@@ -1,4 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
+import { getAnalytics, isSupported, logEvent, Analytics } from "firebase/analytics";
 import { 
   getFirestore, 
   collection, 
@@ -27,7 +28,8 @@ export const firebaseConfig = {
   projectId: "duaputera",
   storageBucket: "duaputera.firebasestorage.app",
   messagingSenderId: "342616327278",
-  appId: "1:342616327278:web:c54a232fcfd4c9a478527f"
+  appId: "1:342616327278:web:c54a232fcfd4c9a478527f",
+  measurementId: "G-7VV4J2E8WM"
 };
 
 // Initialize Firebase App
@@ -36,6 +38,33 @@ export const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfi
 // Initialize Cloud Firestore & Auth
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+
+// Initialize Analytics safely
+export let analytics: Analytics | null = null;
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(app);
+    }
+  }).catch(() => {});
+}
+
+export const logAnalyticsEvent = (eventName: string, params?: Record<string, any>) => {
+  if (analytics) {
+    try {
+      logEvent(analytics, eventName, params);
+    } catch (e) {
+      // ignore
+    }
+  }
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    try {
+      (window as any).gtag("event", eventName, params);
+    } catch (e) {
+      // ignore
+    }
+  }
+};
 
 // Auth helper functions
 export const signInAdmin = (email: string, pass: string) => {
