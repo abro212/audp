@@ -29,6 +29,8 @@ export interface InquiryPayload {
   productName?: string;
   specification?: string;
   quantity?: string;
+  deliveryAddress?: string;
+  deliveryTimeline?: string;
   message?: string;
 }
 
