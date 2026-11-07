@@ -148,10 +148,10 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
               {[
                 'industrial-supply',
                 'office-general-supply',
-                'electrical-mechanical',
-                'safety-equipment-k3',
                 'it-solutions-equipment',
-                'main-distribution-panel'
+                'main-distribution-panel',
+                'electrical-mechanical-supply',
+                'hvac-air-conditioning-service'
               ]
                 .map((id) => productsList.find((p) => p.id === id))
                 .filter((p): p is (typeof productsList)[0] => p !== undefined)
