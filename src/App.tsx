@@ -14,6 +14,8 @@ import { WhyUsPage } from './pages/WhyUsPage';
 import { ClientsPage } from './pages/ClientsPage';
 import { NewsPage } from './pages/NewsPage';
 import { ContactPage } from './pages/ContactPage';
+import { AdminPortal } from './admin/AdminPortal';
+import { syncFromFirestore } from './services/adminDataService';
 import { MessageSquare } from 'lucide-react';
 
 const PAGE_SEO: Record<string, { title: { id: string; en: string }; desc: { id: string; en: string } }> = {
@@ -102,9 +104,41 @@ const PAGE_SEO: Record<string, { title: { id: string; en: string }; desc: { id: 
 export const App: React.FC = () => {
   const [language, setLanguage] = useState<Language>('id');
   const [activePage, setActivePage] = useState<string>('home');
-  
+  const [, setDataTick] = useState(0);
+
+  // Check if current route is /admin-audp
+  const [isAdminPath, setIsAdminPath] = useState(() => {
+    return typeof window !== 'undefined' && 
+      (window.location.pathname === '/admin-audp' || window.location.pathname.startsWith('/admin-audp'));
+  });
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setIsAdminPath(window.location.pathname === '/admin-audp' || window.location.pathname.startsWith('/admin-audp'));
+    };
+    const handleDataUpdated = () => {
+      setDataTick(t => t + 1);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('audp-data-updated', handleDataUpdated);
+
+    // Sync latest content from Firestore in the background
+    syncFromFirestore();
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('audp-data-updated', handleDataUpdated);
+    };
+  }, []);
+
   // Dynamic SEO meta handling on page or language change
   useEffect(() => {
+    if (isAdminPath) {
+      document.title = 'Admin Control Center | PT. Aneka Usaha Dua Putra';
+      return;
+    }
+
     const pageMeta = PAGE_SEO[activePage] || PAGE_SEO['home'];
     const title = pageMeta.title[language] || pageMeta.title['id'];
     const desc = pageMeta.desc[language] || pageMeta.desc['id'];
@@ -142,6 +176,19 @@ export const App: React.FC = () => {
     setActivePage(pageId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // Render Admin Portal if access URL is /admin-audp
+  if (isAdminPath) {
+    return (
+      <AdminPortal 
+        onExit={() => {
+          window.history.pushState(null, '', '/');
+          setIsAdminPath(false);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} 
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-gold-500 selection:text-navy-950 font-sans">

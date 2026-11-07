@@ -738,3 +738,72 @@ export const newsList: NewsItem[] = [
     image: "/assets/prod_8.jpg"
   }
 ];
+
+// Helper to rehydrate data from localStorage or admin updates
+export const rehydrateLocalData = () => {
+  if (typeof window === 'undefined') return;
+  try {
+    const p = localStorage.getItem('audp_products');
+    if (p) {
+      const parsed = JSON.parse(p);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        productsList.length = 0;
+        productsList.push(...parsed);
+      }
+    }
+    const c = localStorage.getItem('audp_clients');
+    if (c) {
+      const parsed = JSON.parse(c);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        clientsList.length = 0;
+        clientsList.push(...parsed);
+      }
+    }
+    const n = localStorage.getItem('audp_news');
+    if (n) {
+      const parsed = JSON.parse(n);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        newsList.length = 0;
+        newsList.push(...parsed);
+      }
+    }
+    const it = localStorage.getItem('audp_it_solutions');
+    if (it) {
+      const parsed = JSON.parse(it);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        itSolutionsList.length = 0;
+        itSolutionsList.push(...parsed);
+      }
+    }
+    const l = localStorage.getItem('audp_legal_docs');
+    if (l) {
+      const parsed = JSON.parse(l);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        legalDocsList.length = 0;
+        legalDocsList.push(...parsed);
+      }
+    }
+    const info = localStorage.getItem('audp_company_info');
+    if (info) {
+      const parsed = JSON.parse(info);
+      if (parsed && typeof parsed === 'object') {
+        Object.assign(companyInfo, parsed);
+      }
+    }
+    const about = localStorage.getItem('audp_about_content');
+    if (about) {
+      const parsed = JSON.parse(about);
+      if (parsed && typeof parsed === 'object') {
+        Object.assign(aboutContent, parsed);
+      }
+    }
+  } catch (e) {
+    console.warn("Could not rehydrate local data:", e);
+  }
+};
+
+// Automatically run on script evaluation in browser
+if (typeof window !== 'undefined') {
+  rehydrateLocalData();
+}
+
