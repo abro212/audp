@@ -301,6 +301,7 @@ export const getStoredCompanyInfo = (): typeof companyInfo => {
 export const saveCompanyInfo = async (info: Partial<typeof companyInfo>): Promise<boolean> => {
   const current = getStoredCompanyInfo();
   const updated = { ...current, ...info };
+  Object.assign(companyInfo, updated);
 
   saveLocal('audp_company_info', updated);
   emitDataUpdated();

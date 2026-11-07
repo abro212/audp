@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="flex items-center gap-3">
               <div className="h-10 flex items-center justify-center">
                 <img 
-                  src="/assets/logo_emblem.png" 
+                  src={companyInfo.logoUrl || "/assets/logo_emblem.png"} 
                   alt="AUDP Logo" 
                   className="h-9 w-auto object-contain"
                 />

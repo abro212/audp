@@ -168,7 +168,7 @@ export const QuotationModal: React.FC<QuotationModalProps> = ({
           {/* Left: Brand Identity */}
           <div className="flex items-center min-w-0 z-10">
             <div className="h-8 sm:h-9 flex items-center justify-center flex-shrink-0 mr-2.5 sm:mr-3">
-              <img src="/assets/logo_emblem.png" alt="PT. AUDP Emblem" className="h-7 sm:h-8.5 w-auto object-contain" />
+              <img src={companyInfo.logoUrl || "/assets/logo_emblem.png"} alt="PT. AUDP Emblem" className="h-7 sm:h-8.5 w-auto object-contain" />
             </div>
             <div className="flex flex-col whitespace-nowrap min-w-0">
               <span className="font-extrabold text-white text-xs sm:text-[13px] tracking-tight leading-snug">

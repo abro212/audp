@@ -5,10 +5,12 @@ import {
   getStoredAboutContent, 
   saveAboutContent 
 } from '../../services/adminDataService';
+import { ImageBrowsePicker } from '../components/ImageBrowsePicker';
 import { 
   CheckCircle,
   Plus,
-  Trash2
+  Trash2,
+  RotateCcw
 } from 'lucide-react';
 
 export const CompanyProfileTab: React.FC = () => {
@@ -17,6 +19,7 @@ export const CompanyProfileTab: React.FC = () => {
   const [savedMessage, setSavedMessage] = useState(false);
 
   // Form states
+  const [logoUrl, setLogoUrl] = useState(info.logoUrl || '/assets/logo_emblem.png');
   const [name, setName] = useState(info.name);
   const [shortName, setShortName] = useState(info.shortName);
   const [tagline, setTagline] = useState(info.tagline);
@@ -75,7 +78,8 @@ export const CompanyProfileTab: React.FC = () => {
       address: address.trim(),
       whatsappUrl: whatsappUrl.trim(),
       motto: motto.trim(),
-      quote: quote.trim()
+      quote: quote.trim(),
+      logoUrl: logoUrl.trim() || '/assets/logo_emblem.png'
     };
 
     const updatedAbout = {
@@ -124,6 +128,81 @@ export const CompanyProfileTab: React.FC = () => {
 
       <form onSubmit={handleSaveAll} className="space-y-6">
         
+        {/* Logo Resmi Perusahaan */}
+        <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800">
+                Logo Resmi Perusahaan
+              </h3>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Logo ini ditampilkan pada Header Navbar, Footer, Modal RFQ Penawaran, Halaman Login, dan Sidebar Admin.
+              </p>
+            </div>
+            {logoUrl !== '/assets/logo_emblem.png' && (
+              <button
+                type="button"
+                onClick={() => setLogoUrl('/assets/logo_emblem.png')}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 px-3 py-1.5 rounded-lg border border-amber-200 cursor-pointer transition-colors w-fit"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Reset ke Logo Standar</span>
+              </button>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            {/* Live Dual-Preview (Light & Dark) */}
+            <div className="lg:col-span-4 space-y-2">
+              <label className="block text-xs font-bold text-slate-700">Preview Logo Aktif</label>
+              <div className="grid grid-cols-2 gap-2.5">
+                {/* Light Box */}
+                <div className="p-3.5 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center min-h-[110px] text-center shadow-2xs">
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Tema Terang</span>
+                  <div className="h-12 w-full flex items-center justify-center">
+                    <img 
+                      src={logoUrl || '/assets/logo_emblem.png'} 
+                      alt="Logo Light Preview" 
+                      className="max-h-12 max-w-full object-contain"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/assets/logo_emblem.png'; }}
+                    />
+                  </div>
+                </div>
+
+                {/* Dark Box */}
+                <div className="p-3.5 rounded-xl border border-slate-800 bg-slate-950 flex flex-col items-center justify-center min-h-[110px] text-center shadow-2xs">
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Tema Gelap</span>
+                  <div className="h-12 w-full flex items-center justify-center">
+                    <img 
+                      src={logoUrl || '/assets/logo_emblem.png'} 
+                      alt="Logo Dark Preview" 
+                      className="max-h-12 max-w-full object-contain"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/assets/logo_emblem.png'; }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <p className="text-[11px] text-slate-400 leading-tight">
+                Pastikan logo terlihat jelas dan proporsional baik pada latar belakang putih maupun gelap.
+              </p>
+            </div>
+
+            {/* ImageBrowsePicker */}
+            <div className="lg:col-span-8">
+              <ImageBrowsePicker
+                label="Pilih / Upload Logo Perusahaan (PNG Transparan / SVG Disarankan)"
+                value={logoUrl}
+                onChange={(newUrl) => setLogoUrl(newUrl)}
+                defaultCategory="branding"
+              />
+              <div className="mt-2 text-[11px] text-slate-500 flex items-start gap-1.5">
+                <span className="text-amber-500 font-bold">•</span>
+                <span>Klik <strong>Browse / Upload Gambar</strong> untuk memilih file logo dari komputer Anda atau gunakan pilihan logo aset bawaan AUDP.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Identitas Umum */}
         <div className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
           <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { subscribeToAuth, signOutAdmin, fetchInquiriesFromFirebase } from '../lib/firebase';
 import { User } from 'firebase/auth';
+import { companyInfo } from '../data/companyData';
 import { AdminLogin } from './AdminLogin';
 import { DashboardTab } from './tabs/DashboardTab';
 import { ProductsTab } from './tabs/ProductsTab';
@@ -112,7 +113,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
       <header className="md:hidden bg-slate-900 border-b border-slate-800 text-white p-4 flex items-center justify-between z-30">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center p-1 overflow-hidden">
-            <img src="/assets/logo_emblem.png" alt="AUDP Logo" className="w-full h-full object-contain" />
+            <img src={companyInfo.logoUrl || "/assets/logo_emblem.png"} alt="AUDP Logo" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">AUDP ADMIN</div>
@@ -139,7 +140,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
         <div>
           <div className="p-5 border-b border-slate-800 flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center p-1.5 flex-shrink-0 overflow-hidden">
-              <img src="/assets/logo_emblem.png" alt="AUDP Logo" className="w-full h-full object-contain" />
+              <img src={companyInfo.logoUrl || "/assets/logo_emblem.png"} alt="AUDP Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <div className="text-[11px] font-bold text-amber-400 tracking-wider uppercase">

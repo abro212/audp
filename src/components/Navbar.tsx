@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               isScrolled ? 'h-7 sm:h-9' : 'h-8 sm:h-10'
             }`}>
               <img 
-                src="/assets/logo_emblem.png" 
+                src={companyInfo.logoUrl || "/assets/logo_emblem.png"} 
                 alt="PT. AUDP Logo Emblem" 
                 className={`w-auto object-contain transition-all duration-300 ${
                   isScrolled ? 'h-6 sm:h-8' : 'h-7 sm:h-9'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { signInAdmin } from '../lib/firebase';
+import { companyInfo } from '../data/companyData';
 import { Eye, EyeOff, Lock, Mail, ArrowLeft, AlertCircle, Loader2 } from 'lucide-react';
 
 interface AdminLoginProps {
@@ -66,7 +67,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onSuccess, onExit }) => 
         <div className="flex items-center gap-3 pb-6 border-b border-slate-800">
           <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center p-1.5 flex-shrink-0 overflow-hidden">
             <img 
-              src="/assets/logo_emblem.png" 
+              src={companyInfo.logoUrl || "/assets/logo_emblem.png"} 
               alt="AUDP Logo" 
               className="w-full h-full object-contain" 
             />

@@ -15,7 +15,8 @@ export const companyInfo = {
   whatsappUrl: "https://wa.me/6281318212184?text=Halo%20PT.%20Aneka%20Usaha%20Dua%20Putra,%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pengadaan%20perusahaan.",
   comproPdfUrl: "/Company Profile PT AUDP.pdf",
   motto: "Fast Service. Fast Response. Reliable Solution.",
-  quote: "Supporting Your Business Every Step of the Way"
+  quote: "Supporting Your Business Every Step of the Way",
+  logoUrl: "/assets/logo_emblem.png"
 };
 
 export const aboutContent = {
