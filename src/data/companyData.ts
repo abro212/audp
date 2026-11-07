@@ -321,6 +321,31 @@ export const productsList: ProductItem[] = [
     iconName: "Zap",
     badge: "FABRIKASI",
     isFeatured: true
+  },
+  {
+    id: "hvac-air-conditioning-service",
+    number: "10",
+    title: {
+      id: "HVAC & Layanan AC (Air Conditioning)",
+      en: "HVAC & Air Conditioning Solutions"
+    },
+    shortDesc: {
+      id: "Pengadaan unit, instalasi, perawatan berkala, dan perbaikan AC industri komersial.",
+      en: "Supply, installation, routine maintenance, and repair of commercial & industrial AC."
+    },
+    fullDesc: {
+      id: "Layanan menyeluruh tata udara dan pendingin ruangan industri meliputi pengadaan unit AC (Split, Cassette, Standing, Chiller), instalasi pemipaan, perawatan cuci berkala, perbaikan kompresor, hingga precision AC ruang server.",
+      en: "End-to-end commercial HVAC and climate solutions including AC unit supply (Split, Cassette, Floor Standing, Chiller), piping installation, scheduled preventive maintenance, compressor troubleshooting, and server room precision cooling."
+    },
+    items: [
+      "Instalasi & Pengadaan Unit AC (Split, Cassette, Floor Standing)",
+      "Perawatan Rutin & Cuci Berkala (Preventive Maintenance)",
+      "Perbaikan Kompresor, Kelistrikan & Pengisian Freon",
+      "Sistem HVAC Central, Chiller & Precision AC Ruang Server"
+    ],
+    image: "/assets/prod_ac.jpg",
+    iconName: "Wind",
+    badge: "LAYANAN"
   }
 ];
 

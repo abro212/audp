@@ -1,7 +1,7 @@
 import React from 'react';
 import { Language, ProductItem } from '../types';
 import { productsList, aboutContent } from '../data/companyData';
-import { Target, Compass, ArrowRight, Settings, Briefcase, Zap, Shield, Sparkles, Package, Wrench, Cpu, CheckCircle } from 'lucide-react';
+import { Target, Compass, ArrowRight, Settings, Briefcase, Zap, Shield, Sparkles, Package, Wrench, Cpu, CheckCircle, Wind } from 'lucide-react';
 
 interface AboutAndProductsProps {
   language: Language;
@@ -25,6 +25,7 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
       case 'Package': return <Package className={className} />;
       case 'Wrench': return <Wrench className={className} />;
       case 'Cpu': return <Cpu className={className} />;
+      case 'Wind': return <Wind className={className} />;
       default: return <Settings className={className} />;
     }
   };
@@ -221,8 +222,8 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
               >
                 <span>
                   {language === 'id' 
-                    ? 'Lihat Semua Katalog & Solusi Pasokan (9 Kategori)' 
-                    : 'View All Products & Supply Solutions (9 Categories)'}
+                    ? 'Lihat Semua Katalog & Solusi Pasokan (10 Kategori)' 
+                    : 'View All Products & Supply Solutions (10 Categories)'}
                 </span>
                 <ArrowRight className="w-4 h-4 text-gold-600 transition-transform duration-200 group-hover:translate-x-1" />
               </button>
