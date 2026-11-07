@@ -3,7 +3,7 @@ import { Language, ProductItem, LegalDocument } from '../types';
 import { Hero } from '../components/Hero';
 import { AboutAndProductsSection } from '../components/AboutAndProductsSection';
 import { ValuesAndFASTSection } from '../components/ValuesAndFASTSection';
-import { LegalAndClientsSection } from '../components/LegalAndClientsSection';
+import { CustomerPortfolioSection } from '../components/CustomerPortfolioSection';
 import { ProcurementProcess } from '../components/ProcurementProcess';
 import { ReadyToPartnerCTA } from '../components/ReadyToPartnerCTA';
 
@@ -12,15 +12,14 @@ interface HomePageProps {
   onNavigatePage: (page: string) => void;
   onOpenQuotation: () => void;
   onSelectProduct: (product: ProductItem) => void;
-  onSelectDocument: (doc: LegalDocument) => void;
+  onSelectDocument?: (doc: LegalDocument) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   language,
   onNavigatePage,
   onOpenQuotation,
-  onSelectProduct,
-  onSelectDocument
+  onSelectProduct
 }) => {
   return (
     <div className="flex flex-col">
@@ -42,11 +41,10 @@ export const HomePage: React.FC<HomePageProps> = ({
         language={language}
       />
 
-      {/* Row 3: Legalitas Perusahaan (4 doc cards) side-by-side with Customer Portfolio (5 client cards) */}
-      <LegalAndClientsSection
+      {/* Row 3: Customer Portfolio - Modern Corporate Client Showcase */}
+      <CustomerPortfolioSection
         language={language}
         onNavigatePage={onNavigatePage}
-        onSelectDocument={onSelectDocument}
       />
 
       {/* Row 4: 6-Step Sourcing & Procurement Workflow */}
