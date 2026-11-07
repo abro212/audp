@@ -189,6 +189,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => handleNavClick('products')}
                     className="w-full text-left px-4 py-1.5 text-xs text-slate-600 hover:text-navy-950 hover:bg-slate-50"
                   >
+                    Main Distribution Panel (MDP / SDP)
+                  </button>
+                  <button
+                    onClick={() => handleNavClick('products')}
+                    className="w-full text-left px-4 py-1.5 text-xs text-slate-600 hover:text-navy-950 hover:bg-slate-50"
+                  >
                     Safety Equipment (K3)
                   </button>
                   <button

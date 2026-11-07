@@ -146,8 +146,8 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
               </button>
             </div>
 
-            {/* 8 Product Cards Grid matching Mockup */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-3.5">
+            {/* 9 Product Cards Grid: balanced 3x3 layout on tablet/desktop */}
+            <div className="grid grid-cols-2 min-[640px]:grid-cols-3 gap-3 sm:gap-3.5">
               {productsList.map((prod) => {
                 const isIT = prod.id === 'it-solutions-equipment';
                 return (

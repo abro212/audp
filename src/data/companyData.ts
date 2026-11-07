@@ -295,6 +295,32 @@ export const productsList: ProductItem[] = [
     iconName: "Cpu",
     badge: "NEW",
     isFeatured: true
+  },
+  {
+    id: "main-distribution-panel",
+    number: "09",
+    title: {
+      id: "Main Panel Distribusi (MDP / SDP)",
+      en: "Main Distribution Panel (MDP / SDP)"
+    },
+    shortDesc: {
+      id: "Fabrikasi dan perakitan Main Distribution Panel (MDP), SDP, dan panel kontrol industri.",
+      en: "Custom fabrication and assembly of Main Distribution Panels (MDP), SDP, and industrial control panels."
+    },
+    fullDesc: {
+      id: "Layanan rancang bangun teknis, fabrikasi box panel, dan perakitan sistem Main Distribution Panel (MDP) serta Sub Distribution Panel (SDP) berstandar industri. Dilengkapi komponen proteksi kelistrikan berdaya tahan tinggi (MCCB, MCB, kontaktor, busbar tembaga, sistem grounding, dan metering 3 phasa) untuk keandalan dan keselamatan distribusi daya pabrik serta fasilitas komersial.",
+      en: "Engineering design, custom enclosure fabrication, and certified assembly of Main Distribution Panels (MDP) and Sub Distribution Panels (SDP). Built with high-grade electrical protection equipment (MCCBs, MCBs, magnetic contactors, copper busbars, grounding systems, and 3-phase metering) to guarantee dependable and safe power distribution for manufacturing plants and commercial facilities."
+    },
+    items: [
+      "Main Distribution Panel (MDP)",
+      "Sub Distribution Panel (SDP)",
+      "3-Phase Power Distribution & Busbars",
+      "Custom Control, MCCB & Metering Panel"
+    ],
+    image: "/assets/prod_panel.jpg",
+    iconName: "Zap",
+    badge: "FABRIKASI",
+    isFeatured: true
   }
 ];
 

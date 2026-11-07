@@ -40,6 +40,7 @@ export const QuotationModal: React.FC<QuotationModalProps> = ({
     'Industrial Supply',
     'Office & General Supply',
     'Electrical & Mechanical Supply',
+    'Main Distribution Panel (MDP / SDP)',
     'Safety Equipment (K3)',
     'Cleaning Equipment & Hygiene',
     'Packaging & Consumables',

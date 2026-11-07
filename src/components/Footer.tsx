@@ -26,6 +26,7 @@ export const Footer: React.FC<FooterProps> = ({
     { id: 'products', label: 'Industrial Supply' },
     { id: 'products', label: 'Office & General Supply' },
     { id: 'products', label: 'Electrical & Mechanical Supply' },
+    { id: 'products', label: 'Main Distribution Panel (MDP/SDP)' },
     { id: 'products', label: 'Safety Equipment (K3)' },
     { id: 'products', label: 'Cleaning Equipment' },
     { id: 'products', label: 'Packaging & Consumables' },

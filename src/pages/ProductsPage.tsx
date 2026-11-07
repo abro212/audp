@@ -35,8 +35,8 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         </div>
 
-        {/* 8 Product Scopes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* 9 Product Scopes Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productsList.map((prod) => {
             const isIT = prod.id === 'it-solutions-equipment';
             return (

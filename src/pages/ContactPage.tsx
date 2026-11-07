@@ -30,6 +30,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
     'Industrial Supply',
     'Office & General Supply',
     'Electrical & Mechanical Supply',
+    'Main Distribution Panel (MDP / SDP)',
     'Safety Equipment (K3)',
     'Cleaning Equipment',
     'Packaging & Consumables',
