@@ -190,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <Cpu className="w-3.5 h-3.5 text-navy-900" />
                       <span>Solusi IT & Equipment</span>
                     </span>
-                    <span className="text-[9px] bg-gold-500 text-navy-950 font-black px-1.5 py-0.2 rounded">NEW</span>
+                    <ArrowRight className="w-3 h-3 text-slate-400 group-hover:text-gold-500 transition-colors" />
                   </button>
                   <div className="border-t border-slate-100 my-1" />
                   <button
@@ -433,10 +433,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 activePage === 'it-solutions' ? 'bg-navy-900 text-white' : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
               }`}
             >
-              <span className="flex items-center gap-2">
-                <span>Solusi IT</span>
-                <span className="text-[9px] bg-gold-500 text-navy-950 font-black px-1.5 py-0.5 rounded">NEW</span>
-              </span>
+              <span>{language === 'id' ? 'Solusi IT & Equipment' : 'IT Solutions & Equipment'}</span>
               <ChevronRight className={`w-4 h-4 ${activePage === 'it-solutions' ? 'text-gold-400' : 'text-slate-400'}`} />
             </button>
 
