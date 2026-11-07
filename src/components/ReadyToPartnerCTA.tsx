@@ -67,7 +67,7 @@ export const ReadyToPartnerCTA: React.FC<ReadyToPartnerCTAProps> = ({
                 <Clock className="w-3.5 h-3.5" /> Fast Response Guaranteed
               </span>
               <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5" /> {language === 'id' ? 'Standar Mutu Terverifikasi' : 'Verified Quality Standards'}
+                <ShieldCheck className="w-3.5 h-3.5" /> {language === 'id' ? 'Legalitas Lengkap' : 'Complete Legal Compliance'}
               </span>
             </div>
           </div>

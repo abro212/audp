@@ -188,7 +188,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Bottom Bar: Copyright matching Mockup */}
         <div className="pt-6 border-t border-navy-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
-          <p>© 2024 PT. Aneka Usaha Dua Putra. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PT. Aneka Usaha Dua Putra. All rights reserved.</p>
           <p className="text-[11px]">
             {companyInfo.motto}
           </p>
