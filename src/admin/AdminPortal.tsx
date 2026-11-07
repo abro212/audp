@@ -110,23 +110,34 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
          ======================================================== */}
       
       {/* Mobile Top Header */}
-      <header className="md:hidden bg-slate-900 border-b border-slate-800 text-white p-4 flex items-center justify-between z-30">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center p-1 overflow-hidden">
+      <header className="md:hidden bg-slate-900 border-b border-slate-800 text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between sticky top-0 z-30 shadow-md">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center p-1 overflow-hidden shrink-0">
             <img src={companyInfo.logoUrl || "/assets/logo_emblem.png"} alt="AUDP Logo" className="w-full h-full object-contain" />
           </div>
-          <div>
-            <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">AUDP ADMIN</div>
-            <div className="text-xs font-bold text-white">{activeNav.label}</div>
+          <div className="min-w-0">
+            <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider leading-none">AUDP ADMIN</div>
+            <div className="text-xs font-bold text-white truncate mt-0.5">{activeNav.label}</div>
           </div>
         </div>
 
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex items-center gap-1.5 shrink-0">
+          <button
+            onClick={onExit}
+            className="min-h-[40px] min-w-[40px] flex items-center justify-center rounded-lg bg-slate-800 hover:bg-slate-700 active:bg-slate-950 text-slate-300 hover:text-white transition-colors cursor-pointer"
+            title="Lihat Website Utama"
+            aria-label="Lihat Website"
+          >
+            <ExternalLink className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg bg-slate-800 hover:bg-slate-700 active:bg-slate-950 text-slate-300 hover:text-white transition-colors cursor-pointer"
+            aria-label="Buka Menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5 text-amber-400" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </header>
 
       {/* Sidebar Desktop */}
@@ -241,7 +252,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
         </div>
 
         {/* Content Body Container */}
-        <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+        <div className="flex-1 p-3 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
           {activeTab === 'dashboard' && (
             <DashboardTab
               onNavigateTab={(tab) => setActiveTab(tab)}

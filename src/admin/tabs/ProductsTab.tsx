@@ -182,37 +182,37 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'cata
       ) : (
         <>
           {/* Header & Controls */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 tracking-tight">
-            Layanan
-          </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
-            Total {products.length} kategori layanan dan pasokan barang terdaftar.
-          </p>
-        </div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs">
+            <div>
+              <h2 className="text-lg font-bold text-slate-900 tracking-tight">
+                Layanan
+              </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Total {products.length} kategori layanan dan pasokan barang terdaftar.
+              </p>
+            </div>
 
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Cari produk..."
-              className="pl-9 pr-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-hidden focus:border-amber-500 w-44 sm:w-56"
-            />
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 w-full sm:w-auto">
+              <div className="relative w-full sm:w-56">
+                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Cari produk..."
+                  className="w-full pl-9 pr-3.5 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-hidden focus:border-amber-500"
+                />
+              </div>
+
+              <button
+                onClick={handleOpenAdd}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white text-xs font-bold transition-colors cursor-pointer min-h-[40px]"
+              >
+                <Plus className="w-4 h-4 text-amber-400" />
+                <span>Tambah Produk</span>
+              </button>
+            </div>
           </div>
-
-          <button
-            onClick={handleOpenAdd}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-colors cursor-pointer"
-          >
-            <Plus className="w-4 h-4 text-amber-400" />
-            <span>Tambah Produk</span>
-          </button>
-        </div>
-      </div>
 
       {/* Products Table */}
       <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
@@ -268,21 +268,23 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'cata
                       <span className="text-slate-400 text-[11px]">Katalog</span>
                     )}
                   </td>
-                  <td className="py-3.5 px-4 text-right">
-                    <div className="inline-flex items-center gap-1">
+                  <td className="py-3 px-4 text-right">
+                    <div className="inline-flex items-center gap-1.5 justify-end">
                       <button
                         onClick={() => handleOpenEdit(p)}
-                        className="p-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                        className="min-h-[38px] min-w-[38px] flex items-center justify-center p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 active:bg-slate-200 transition-colors"
                         title="Edit Produk"
+                        aria-label="Edit Produk"
                       >
-                        <Edit2 className="w-3.5 h-3.5" />
+                        <Edit2 className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => handleDelete(p.id, p.title.id)}
-                        className="p-1.5 rounded-lg text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors"
+                        className="min-h-[38px] min-w-[38px] flex items-center justify-center p-2 rounded-lg text-red-600 hover:text-red-700 hover:bg-red-50 active:bg-red-100 transition-colors"
                         title="Hapus Produk"
+                        aria-label="Hapus Produk"
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                   </td>
@@ -303,24 +305,25 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'cata
 
       {/* CRUD Modal Form */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-300 shadow-2xl overflow-hidden my-8">
+        <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+          <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-300 shadow-2xl overflow-hidden my-4 sm:my-8">
             
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-5 border-b border-slate-200 bg-slate-50">
+            <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-200 bg-slate-50">
               <h3 className="text-sm font-bold text-slate-900">
                 {editingProduct ? 'Edit Kategori Produk' : 'Tambah Kategori Produk Baru'}
               </h3>
               <button
                 onClick={() => setModalOpen(false)}
-                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-200"
+                className="min-h-[40px] min-w-[40px] flex items-center justify-center p-2 rounded-lg text-slate-500 hover:text-slate-700 hover:bg-slate-200 active:bg-slate-300 transition-colors cursor-pointer"
+                aria-label="Tutup Modal"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Modal Body */}
-            <form onSubmit={handleSubmit} className="p-5 sm:p-6 space-y-4 max-h-[75vh] overflow-y-auto text-xs">
+            <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 max-h-[78vh] overflow-y-auto text-xs">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -486,17 +489,17 @@ export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'cata
               </div>
 
               {/* Modal Actions */}
-              <div className="flex items-center justify-end gap-2 pt-4 border-t border-slate-200">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2 pt-4 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-100 font-bold"
+                  className="min-h-[44px] px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-100 active:bg-slate-200 font-bold transition-colors cursor-pointer"
                 >
                   Batal
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold transition-colors cursor-pointer"
+                  className="min-h-[44px] px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white font-bold transition-colors cursor-pointer"
                 >
                   Simpan Produk
                 </button>

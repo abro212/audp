@@ -395,26 +395,38 @@ export const CompanyProfileTab: React.FC = () => {
           <div className="space-y-3 pt-2">
             <label className="block text-xs font-bold text-slate-700">Daftar Poin Misi</label>
             {missionIdList.map((mId, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <span className="font-mono text-xs font-bold text-slate-400 w-6 text-center">{index + 1}.</span>
+              <div key={index} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 p-3 sm:p-0 rounded-xl bg-slate-50 sm:bg-transparent border sm:border-0 border-slate-200">
+                <div className="flex items-center gap-2 sm:hidden">
+                  <span className="font-mono text-xs font-bold text-slate-500">Misi #{index + 1}</span>
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveMission(index)}
+                    className="min-h-[36px] min-w-[36px] flex items-center justify-center p-2 text-red-500 hover:text-red-700 hover:bg-red-100 rounded-lg ml-auto cursor-pointer"
+                    aria-label="Hapus Poin Misi"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+                <span className="hidden sm:inline-block font-mono text-xs font-bold text-slate-400 w-6 text-center">{index + 1}.</span>
                 <input
                   type="text"
                   value={mId}
                   onChange={(e) => handleUpdateMissionId(e.target.value, index)}
                   placeholder="Misi (ID)"
-                  className="flex-1 p-2 rounded-xl border border-slate-200 text-xs"
+                  className="flex-1 p-2.5 rounded-xl border border-slate-200 text-xs bg-white"
                 />
                 <input
                   type="text"
                   value={missionEnList[index] || ''}
                   onChange={(e) => handleUpdateMissionEn(e.target.value, index)}
                   placeholder="Mission (EN)"
-                  className="flex-1 p-2 rounded-xl border border-slate-200 text-xs"
+                  className="flex-1 p-2.5 rounded-xl border border-slate-200 text-xs bg-white"
                 />
                 <button
                   type="button"
                   onClick={() => handleRemoveMission(index)}
-                  className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg"
+                  className="hidden sm:flex min-h-[38px] min-w-[38px] items-center justify-center p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg cursor-pointer"
+                  title="Hapus Poin Misi"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -427,7 +439,7 @@ export const CompanyProfileTab: React.FC = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-md transition-colors cursor-pointer"
+            className="w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white font-bold text-xs shadow-md transition-colors cursor-pointer text-center"
           >
             Simpan Perubahan Profil Perusahaan
           </button>
