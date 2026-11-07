@@ -23,7 +23,6 @@ import {
   ExternalLink, 
   Menu, 
   X, 
-  Shield, 
   ChevronRight 
 } from 'lucide-react';
 
@@ -115,8 +114,8 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
       {/* Mobile Top Header */}
       <header className="md:hidden bg-slate-900 border-b border-slate-800 text-white p-4 flex items-center justify-between z-30">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400">
-            <Shield className="w-4 h-4" />
+          <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center p-1 overflow-hidden">
+            <img src="/assets/logo_emblem.png" alt="AUDP Logo" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="text-[10px] font-bold text-amber-400 uppercase tracking-wider">AUDP ADMIN</div>
@@ -142,12 +141,12 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
         {/* Top Branding */}
         <div>
           <div className="p-5 border-b border-slate-800 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 flex-shrink-0">
-              <Shield className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center p-1.5 flex-shrink-0 overflow-hidden">
+              <img src="/assets/logo_emblem.png" alt="AUDP Logo" className="w-full h-full object-contain" />
             </div>
             <div>
-              <div className="text-[10px] font-bold text-amber-400 tracking-wider uppercase">
-                PT. AUDP
+              <div className="text-[11px] font-bold text-amber-400 tracking-wider uppercase">
+                AUDP
               </div>
               <h1 className="text-sm font-bold text-white tracking-tight">
                 Control Center
@@ -200,14 +199,6 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
           </div>
 
           <div className="space-y-1">
-            <button
-              onClick={onExit}
-              className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
-            >
-              <ExternalLink className="w-4 h-4 text-amber-400" />
-              <span>Kembali ke Website</span>
-            </button>
-
             <button
               onClick={handleLogout}
               className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-red-400 hover:text-red-300 hover:bg-red-950/50 transition-colors cursor-pointer"
