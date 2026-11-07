@@ -142,65 +142,90 @@ export const AboutAndProductsSection: React.FC<AboutAndProductsProps> = ({
               </button>
             </div>
 
-            {/* 9 Product Cards Grid: balanced 3x3 layout on tablet/desktop */}
+            {/* 6 Main Product Cards Grid: balanced 2x3 layout on tablet/desktop */}
             <div className="grid grid-cols-2 min-[640px]:grid-cols-3 gap-3 sm:gap-3.5">
-              {productsList.map((prod) => {
-                const isIT = prod.id === 'it-solutions-equipment';
-                return (
-                  <div
-                    key={prod.id}
-                    onClick={() => {
-                      if (isIT) {
-                        onNavigatePage('it-solutions');
-                      } else {
-                        onSelectProduct(prod);
-                      }
-                    }}
-                    className={`group relative flex flex-col min-w-0 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
-                      isIT 
-                        ? 'border-2 border-amber-500 bg-white shadow-sm hover:shadow-md' 
-                        : 'border border-slate-200 bg-white hover:border-slate-300 shadow-2xs hover:shadow-sm'
-                    }`}
-                  >
-                    {/* Badge NEW for IT Solutions as in Mockup */}
-                    {prod.badge && (
-                      <div className="absolute top-2 right-2 z-10 px-1.5 py-0.5 rounded bg-gold-500 text-navy-950 text-[9px] font-extrabold shadow-xs">
-                        {prod.badge}
-                      </div>
-                    )}
-
-                    {/* Thumbnail Image */}
-                    <div className="w-full h-24 sm:h-28 overflow-hidden bg-slate-100 relative">
-                      <img 
-                        src={prod.image} 
-                        alt={prod.title[language]} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-2.5 sm:p-3 flex flex-col flex-1 justify-between bg-white min-w-0">
-                      <div>
-                        <div className="flex items-center gap-1.5 text-blue-700 mb-1">
-                          {renderIcon(prod.iconName, "w-3.5 h-3.5")}
-                          <h4 className="text-[11px] sm:text-xs font-bold text-navy-950 group-hover:text-gold-600 transition-colors line-clamp-1 leading-snug">
-                            {prod.title[language]}
-                          </h4>
+              {[
+                'industrial-supply',
+                'office-general-supply',
+                'electrical-mechanical',
+                'safety-equipment-k3',
+                'it-solutions-equipment',
+                'main-distribution-panel'
+              ]
+                .map((id) => productsList.find((p) => p.id === id))
+                .filter((p): p is (typeof productsList)[0] => p !== undefined)
+                .map((prod) => {
+                  const isIT = prod.id === 'it-solutions-equipment';
+                  return (
+                    <div
+                      key={prod.id}
+                      onClick={() => {
+                        if (isIT) {
+                          onNavigatePage('it-solutions');
+                        } else {
+                          onSelectProduct(prod);
+                        }
+                      }}
+                      className={`group relative flex flex-col min-w-0 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 ${
+                        isIT 
+                          ? 'border-2 border-amber-500 bg-white shadow-sm hover:shadow-md' 
+                          : 'border border-slate-200 bg-white hover:border-slate-300 shadow-2xs hover:shadow-sm'
+                      }`}
+                    >
+                      {/* Badge for featured items */}
+                      {prod.badge && (
+                        <div className="absolute top-2 right-2 z-10 px-1.5 py-0.5 rounded bg-gold-500 text-navy-950 text-[9px] font-extrabold shadow-xs">
+                          {prod.badge}
                         </div>
-                        <p className="text-[10px] sm:text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
-                          {prod.shortDesc[language]}
-                        </p>
+                      )}
+
+                      {/* Thumbnail Image */}
+                      <div className="w-full h-24 sm:h-28 overflow-hidden bg-slate-100 relative">
+                        <img 
+                          src={prod.image} 
+                          alt={prod.title[language]} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
 
-                      <div className="mt-2 pt-1.5 border-t border-slate-100 flex items-center justify-between text-[10px] font-semibold text-slate-400 group-hover:text-navy-900">
-                        <span>{language === 'id' ? 'Detail' : 'Details'}</span>
-                        <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" />
+                      {/* Content */}
+                      <div className="p-2.5 sm:p-3 flex flex-col flex-1 justify-between bg-white min-w-0">
+                        <div>
+                          <div className="flex items-center gap-1.5 text-navy-900 mb-1">
+                            {renderIcon(prod.iconName, "w-3.5 h-3.5")}
+                            <h4 className="text-[11px] sm:text-xs font-bold text-navy-950 group-hover:text-gold-600 transition-colors line-clamp-1 leading-snug">
+                              {prod.title[language]}
+                            </h4>
+                          </div>
+                          <p className="text-[10px] sm:text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                            {prod.shortDesc[language]}
+                          </p>
+                        </div>
+
+                        <div className="mt-2 pt-1.5 border-t border-slate-100 flex items-center justify-between text-[10px] font-semibold text-slate-400 group-hover:text-navy-900">
+                          <span>{language === 'id' ? 'Detail' : 'Details'}</span>
+                          <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform" />
+                        </div>
                       </div>
+
                     </div>
+                  );
+                })}
+            </div>
 
-                  </div>
-                );
-              })}
+            {/* Button / Link More to View All Product Catalog & Supply Solutions */}
+            <div className="mt-4 pt-2">
+              <button
+                onClick={() => onNavigatePage('products')}
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 hover:border-navy-900 text-xs sm:text-sm font-bold text-navy-950 transition-all shadow-2xs hover:shadow-xs group"
+              >
+                <span>
+                  {language === 'id' 
+                    ? 'Lihat Semua Katalog & Solusi Pasokan (9 Kategori)' 
+                    : 'View All Products & Supply Solutions (9 Categories)'}
+                </span>
+                <ArrowRight className="w-4 h-4 text-gold-600 transition-transform duration-200 group-hover:translate-x-1" />
+              </button>
             </div>
 
           </div>
