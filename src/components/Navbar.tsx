@@ -22,7 +22,19 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Detect scroll for smooth sticky header transition
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -65,24 +77,38 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
+    <header 
+      className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md shadow-slate-900/5' 
+          : 'bg-white/95 backdrop-blur-md border-b border-slate-200/70 shadow-xs'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 gap-2">
+        <div className={`flex items-center justify-between gap-2 transition-all duration-300 ease-in-out ${
+          isScrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20'
+        }`}>
           
           {/* Logo Brand: show full company name without truncation */}
           <div 
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2 sm:gap-3 cursor-pointer group select-none flex-shrink-0"
           >
-            <div className="relative h-8 sm:h-10 flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className={`relative flex-shrink-0 flex items-center justify-center group-hover:scale-105 transition-all duration-300 ${
+              isScrolled ? 'h-7 sm:h-9' : 'h-8 sm:h-10'
+            }`}>
               <img 
                 src="/assets/logo_emblem.png" 
                 alt="PT. AUDP Logo Emblem" 
-                className="h-7 sm:h-9 w-auto object-contain"
+                className={`w-auto object-contain transition-all duration-300 ${
+                  isScrolled ? 'h-6 sm:h-8' : 'h-7 sm:h-9'
+                }`}
               />
             </div>
             <div className="flex flex-col flex-shrink-0 whitespace-nowrap">
-              <span className="font-extrabold text-navy-950 text-xs sm:text-sm md:text-[15px] tracking-tight leading-snug whitespace-nowrap group-hover:text-navy-700 transition-colors">
+              <span className={`font-extrabold text-navy-950 tracking-tight leading-snug whitespace-nowrap group-hover:text-navy-700 transition-all duration-300 ${
+                isScrolled ? 'text-xs sm:text-[13px] md:text-sm' : 'text-xs sm:text-sm md:text-[15px]'
+              }`}>
                 PT. ANEKA USAHA DUA PUTRA
               </span>
               <span className="text-[9px] min-[380px]:text-[10px] sm:text-[11px] font-semibold text-gold-600 tracking-wider leading-none whitespace-nowrap">
