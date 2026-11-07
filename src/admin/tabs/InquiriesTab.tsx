@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   fetchInquiriesFromFirebase, 
+  subscribeToInquiries,
   updateInquiryStatusInFirebase, 
   deleteInquiryFromFirebase, 
   InquiryItemWithId 
@@ -29,7 +30,14 @@ export const InquiriesTab: React.FC = () => {
   };
 
   useEffect(() => {
-    loadData();
+    setLoading(true);
+    const unsubscribe = subscribeToInquiries((data) => {
+      setInquiries(data);
+      setLoading(false);
+    });
+    return () => {
+      if (typeof unsubscribe === 'function') unsubscribe();
+    };
   }, []);
 
   const handleStatusChange = async (id: string, newStatus: string) => {

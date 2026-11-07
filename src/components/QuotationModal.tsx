@@ -115,7 +115,24 @@ export const QuotationModal: React.FC<QuotationModalProps> = ({
     setSubmitted(true);
   };
 
-  const handleSendViaWhatsApp = () => {
+  const handleSendViaWhatsApp = async () => {
+    // Record inquiry to Firebase so it immediately appears in the Admin RFQ Inbox
+    submitInquiryToFirebase({
+      source: 'quotation_modal',
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      whatsapp: formData.whatsapp,
+      category: formData.category,
+      department: formData.department,
+      productName: formData.productName,
+      specification: formData.specification,
+      quantity: formData.quantity,
+      deliveryAddress: formData.deliveryAddress,
+      deliveryTimeline: formData.deliveryTimeline,
+      message: formData.message
+    });
+
     const text = `*REQUEST FOR QUOTATION - PT. ANEKA USAHA DUA PUTRA*%0A%0A` +
       `*1. INFORMASI KONTAK*%0A` +
       `• Nama: ${formData.name || '-'}%0A` +

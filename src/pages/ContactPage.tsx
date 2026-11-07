@@ -64,6 +64,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language }) => {
   };
 
   const handleSendViaWhatsApp = () => {
+    // Record inquiry to Firebase so it immediately appears in the Admin RFQ Inbox
+    submitInquiryToFirebase({
+      source: 'contact_page',
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      whatsapp: formData.whatsapp,
+      category: formData.category,
+      department: formData.department,
+      productName: formData.productName,
+      specification: formData.specification,
+      quantity: formData.quantity,
+      message: formData.message
+    });
+
     const text = `*INQUIRY - PT. ANEKA USAHA DUA PUTRA*%0A%0A` +
       `*Nama:* ${formData.name || '-'}%0A` +
       `*Perusahaan:* ${formData.company || '-'}%0A` +
