@@ -5,6 +5,7 @@ import {
   saveClient, 
   deleteClient 
 } from '../../services/adminDataService';
+import { ImageBrowsePicker } from '../components/ImageBrowsePicker';
 import { 
   Plus, 
   Edit2, 
@@ -12,15 +13,6 @@ import {
   Search, 
   X 
 } from 'lucide-react';
-
-const PRESET_CLIENT_LOGOS = [
-  { name: 'Changming Automotive', url: '/assets/clients/cai.png' },
-  { name: 'Bank Mandiri', url: '/assets/clients/mandiri.png' },
-  { name: 'Sunshine Technica', url: '/assets/clients/st.png' },
-  { name: 'Tebe Indo Sunshine', url: '/assets/clients/tebeindo.png' },
-  { name: 'Bank BRI', url: '/assets/clients/bri.svg' },
-  { name: 'Metal One Steel (MOSSI)', url: '/assets/clients/mossi.png' }
-];
 
 export const ClientsTab: React.FC = () => {
   const [clients, setClients] = useState<ClientItem[]>(() => getStoredClients());
@@ -232,39 +224,12 @@ export const ClientsTab: React.FC = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block font-bold text-slate-700 mb-1">URL Logo Klien</label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    required
-                    value={logoUrl}
-                    onChange={(e) => setLogoUrl(e.target.value)}
-                    placeholder="/assets/clients/cai.png"
-                    className="flex-1 p-2.5 rounded-xl border border-slate-200 font-mono"
-                  />
-                  <div className="w-10 h-10 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-center p-1">
-                    <img src={logoUrl} alt="Logo" className="max-h-8 max-w-full object-contain" />
-                  </div>
-                </div>
-
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {PRESET_CLIENT_LOGOS.map((c) => (
-                    <button
-                      key={c.url}
-                      type="button"
-                      onClick={() => setLogoUrl(c.url)}
-                      className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${
-                        logoUrl === c.url 
-                          ? 'bg-amber-100 text-amber-800 border-amber-300' 
-                          : 'bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200'
-                      }`}
-                    >
-                      {c.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              <ImageBrowsePicker
+                label="Logo Klien (Upload / Browse Galeri)"
+                value={logoUrl}
+                onChange={setLogoUrl}
+                defaultCategory="clients"
+              />
 
               <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-200">
                 <button

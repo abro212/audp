@@ -5,6 +5,7 @@ import {
   saveLegalDoc, 
   deleteLegalDoc 
 } from '../../services/adminDataService';
+import { ImageBrowsePicker } from '../components/ImageBrowsePicker';
 import { 
   Plus, 
   Edit2, 
@@ -268,19 +269,15 @@ export const LegalDocsTab: React.FC = () => {
                 />
               </div>
 
-              <div>
-                <label className="block font-bold text-slate-700 mb-1">URL Gambar / Dokumen</label>
-                <input
-                  type="text"
-                  value={previewImage}
-                  onChange={(e) => {
-                    setPreviewImage(e.target.value);
-                    setFullImage(e.target.value);
-                  }}
-                  placeholder="/assets/legal_npwp.jpg"
-                  className="w-full p-2.5 rounded-xl border border-slate-200 font-mono"
-                />
-              </div>
+              <ImageBrowsePicker
+                label="Dokumen Legalitas / Berkas (Upload / Browse Galeri)"
+                value={previewImage}
+                onChange={(val) => {
+                  setPreviewImage(val);
+                  setFullImage(val);
+                }}
+                defaultCategory="legal"
+              />
 
               <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-200">
                 <button

@@ -5,6 +5,7 @@ import {
   saveNews, 
   deleteNews 
 } from '../../services/adminDataService';
+import { ImageBrowsePicker } from '../components/ImageBrowsePicker';
 import { 
   Plus, 
   Edit2, 
@@ -300,16 +301,12 @@ export const NewsTab: React.FC = () => {
                 />
               </div>
 
-              <div>
-                <label className="block font-bold text-slate-700 mb-1">URL Gambar Thumbnail</label>
-                <input
-                  type="text"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                  placeholder="/assets/prod_1.jpg"
-                  className="w-full p-2.5 rounded-xl border border-slate-200 font-mono"
-                />
-              </div>
+              <ImageBrowsePicker
+                label="Gambar Thumbnail Berita (Upload / Browse Galeri)"
+                value={image}
+                onChange={setImage}
+                defaultCategory="products"
+              />
 
               <div className="flex items-center justify-end gap-2 pt-3 border-t border-slate-200">
                 <button

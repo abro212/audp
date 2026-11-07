@@ -5,6 +5,7 @@ import {
   saveProduct, 
   deleteProduct 
 } from '../../services/adminDataService';
+import { ImageBrowsePicker } from '../components/ImageBrowsePicker';
 import { 
   Plus, 
   Edit2, 
@@ -24,19 +25,6 @@ const ICON_OPTIONS = [
   'Wrench',
   'Cpu',
   'Wind'
-];
-
-const PRESET_IMAGES = [
-  { label: 'Industrial Supply', url: '/assets/prod_1.jpg' },
-  { label: 'Office & General Supply', url: '/assets/prod_2.jpg' },
-  { label: 'Electrical & Mechanical', url: '/assets/prod_3.jpg' },
-  { label: 'Safety Equipment K3', url: '/assets/prod_4.jpg' },
-  { label: 'Cleaning Equipment', url: '/assets/prod_5.jpg' },
-  { label: 'Packaging & Consumables', url: '/assets/prod_6.jpg' },
-  { label: 'Operational Material', url: '/assets/prod_7.jpg' },
-  { label: 'IT Solutions & Hardware', url: '/assets/prod_8.jpg' },
-  { label: 'Main Panel MDP / SDP', url: '/assets/prod_panel.jpg' },
-  { label: 'HVAC & Layanan AC', url: '/assets/prod_ac.jpg' }
 ];
 
 export const ProductsTab: React.FC = () => {
@@ -409,42 +397,13 @@ export const ProductsTab: React.FC = () => {
                 />
               </div>
 
-              {/* Image URL & Preset Picker */}
-              <div>
-                <label className="block font-bold text-slate-700 mb-1">URL Gambar Produk</label>
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                    placeholder="/assets/prod_1.jpg atau URL eksternal"
-                    className="flex-1 p-2.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white font-mono"
-                  />
-                  <img 
-                    src={image} 
-                    alt="Preview" 
-                    className="w-10 h-10 object-cover rounded-lg border border-slate-300"
-                    onError={(e) => { (e.target as any).src = '/assets/prod_1.jpg'; }}
-                  />
-                </div>
-                {/* Presets */}
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  {PRESET_IMAGES.map((img) => (
-                    <button
-                      key={img.url}
-                      type="button"
-                      onClick={() => setImage(img.url)}
-                      className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${
-                        image === img.url 
-                          ? 'bg-amber-100 text-amber-800 border-amber-300' 
-                          : 'bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200'
-                      }`}
-                    >
-                      {img.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              {/* Image Browse & Picker */}
+              <ImageBrowsePicker
+                label="Foto / Gambar Produk (Upload / Browse Galeri)"
+                value={image}
+                onChange={setImage}
+                defaultCategory="products"
+              />
 
               {/* Icon, Badge, and Featured */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
