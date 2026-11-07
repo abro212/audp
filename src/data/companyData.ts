@@ -696,8 +696,8 @@ export const newsList: NewsItem[] = [
       en: "One-stop supply integration to accelerate industrial and office procurement fulfillment."
     },
     content: {
-      id: "PT. Aneka Usaha Dua Putra memfasilitasi kebutuhan perlengkapan industri, keselamatan kerja, hingga perangkat teknologi kantor secara terpadu untuk mendukung operasional manufaktur.",
-      en: "PT. Aneka Usaha Dua Putra integrates industrial supplies, safety gear, and corporate IT equipment to support manufacturing operations."
+      id: "PT. Aneka Usaha Dua Putra memfasilitasi kebutuhan perlengkapan industri, keselamatan kerja, hingga perangkat teknologi kantor secara terpadu untuk mendukung operasional manufaktur. Melalui sistem logistik terpadu di kawasan Cikarang dan sekitarnya, perusahaan manufaktur dapat memangkas waktu tunggu pengadaan (lead time) hingga 40% sekaligus memastikan seluruh barang yang dipasok telah melalui verifikasi spesifikasi teknis dan standar mutu pabrik.",
+      en: "PT. Aneka Usaha Dua Putra integrates industrial supplies, safety gear, and corporate IT equipment to support manufacturing operations. Through an integrated logistics system in the Cikarang corridor, manufacturing enterprises can cut procurement lead times by up to 40% while ensuring all delivered goods undergo rigorous technical verification against factory standards."
     },
     image: "/assets/prod_1.jpg"
   },
@@ -714,8 +714,8 @@ export const newsList: NewsItem[] = [
       en: "Adhering to certified personal protective equipment to maintain plant safety and productivity."
     },
     content: {
-      id: "Penyediaan alat pelindung diri (APD) terstandar mendukung terciptanya lingkungan kerja aman di sektor otomotif, pergudangan, dan manufaktur presisi.",
-      en: "Supplying standard-compliant personal protective equipment supports safe operating environments across automotive, warehousing, and precision manufacturing."
+      id: "Penyediaan alat pelindung diri (APD) terstandar mendukung terciptanya lingkungan kerja aman di sektor otomotif, pergudangan, dan manufaktur presisi. Kepatuhan terhadap standar SNI dan standar internasional (EN ISO) tidak hanya melindungi pekerja dari risiko cedera mekanikal dan kimia, tetapi juga meningkatkan kepatuhan audit SMK3 perusahaan saat melayani pasar ekspor dan pelanggan multinasional.",
+      en: "Supplying standard-compliant personal protective equipment supports safe operating environments across automotive, warehousing, and precision manufacturing. Adhering to certified SNI and EN ISO standards not only shields workers from mechanical and chemical hazards, but also bolsters corporate SMK3 audit compliance when fulfilling multinational client contracts."
     },
     image: "/assets/prod_4.jpg"
   },
@@ -732,10 +732,136 @@ export const newsList: NewsItem[] = [
       en: "Guidelines for selecting workstations, network switches, and software licensing efficiently."
     },
     content: {
-      id: "PT. Aneka Usaha Dua Putra membantu tim purchasing memetakan spesifikasi hardware dan jaringan yang sesuai dengan kebutuhan dan anggaran perusahaan.",
-      en: "PT. Aneka Usaha Dua Putra assists purchasing teams in mapping hardware and network specifications aligned with corporate budgets."
+      id: "PT. Aneka Usaha Dua Putra membantu tim purchasing memetakan spesifikasi hardware dan jaringan yang sesuai dengan kebutuhan dan anggaran perusahaan. Mulai dari laptop komersial berdaya tahan tinggi, monitor multi-display untuk workstation teknik, rak server rackmount dengan pendingin presisi, hingga lisensi sistem operasi dan keamanan siber bergaransi resmi distributor.",
+      en: "PT. Aneka Usaha Dua Putra assists purchasing teams in mapping hardware and network specifications aligned with corporate budgets. From commercial enterprise laptops and multi-display technical workstations to rackmount server cabinets and genuine operating system and cybersecurity licensing with full distributor warranties."
     },
     image: "/assets/prod_8.jpg"
+  },
+  {
+    id: "news-4",
+    date: "24 Oktober 2024",
+    category: { id: "Fabrikasi & Elektrikal", en: "Fabrication & Electrical" },
+    title: {
+      id: "Standar Keamanan dan Fabrikasi Main Distribution Panel (MDP/SDP) pada Fasilitas Pabrik",
+      en: "Safety Standards and Fabrication of Industrial Main Distribution Panels (MDP/SDP)"
+    },
+    summary: {
+      id: "Panduan teknis perakitan panel distribusi 3-fasa, pemilihan komponen pemutus daya (MCCB), serta proteksi beban lebih untuk mencegah downtime lini manufaktur.",
+      en: "Technical guidelines for 3-phase power distribution assembly, MCCB protection selection, and overload prevention to eliminate manufacturing downtime."
+    },
+    content: {
+      id: "Main Distribution Panel (MDP) dan Sub Distribution Panel (SDP) memegang peranan krusial dalam mendistribusikan energi listrik dari gardu trafo ke seluruh lini perakitan pabrik. Fabrikasi panel berstandar industri harus mengutamakan busbar tembaga murni dengan ketebalan teruji, proteksi lonjakan tegangan (Surge Arrester), pemutus daya MCCB berkapasitas interrupting sesuai beban arus hubung singkat, serta ventilasi termal otomatis. PT. Aneka Usaha Dua Putra melayani fabrikasi kustom panel MDP dan SDP dengan sertifikasi pengujian ketahanan isolasi (Megger test) dan pengkabelan terstruktur ferrule guna memastikan stabilitas pasokan daya bebas risiko korsleting.",
+      en: "Main Distribution Panels (MDP) and Sub Distribution Panels (SDP) serve as the electrical lifeline distributing power from step-down transformers to high-load assembly machinery. Industrial-grade panel fabrication requires high-purity copper busbars with verified current capacity, transient surge arresters, molded case circuit breakers (MCCB) rated for prospective short-circuit currents, and automated cabinet thermal ventilation. PT. Aneka Usaha Dua Putra delivers custom MDP and SDP fabrication, comprehensive insulation resistance testing, and structured ferrule wire dressing to ensure flawless 24/7 power continuity."
+    },
+    image: "/assets/news_panel.jpg"
+  },
+  {
+    id: "news-5",
+    date: "15 November 2024",
+    category: { id: "Layanan HVAC", en: "HVAC Services" },
+    title: {
+      id: "Manajemen Tata Udara Industri: Pentingnya Preventive Maintenance AC Central dan Ruang Server",
+      en: "Industrial HVAC Management: Preventive Maintenance for Central AC and Server Rooms"
+    },
+    summary: {
+      id: "Strategi perawatan berkala sistem pendingin udara komersial guna menjaga stabilitas temperatur ruang kontrol, efisiensi konsumsi listrik, dan kenyamanan kerja.",
+      en: "Scheduled maintenance strategies for commercial climate systems to maintain server room temperature stability, energy efficiency, and operational comfort."
+    },
+    content: {
+      id: "Fluktuasi suhu dan kelembapan di area produksi elektronik, laboratorium kontrol mutu, maupun ruang server dapat menyebabkan malfungsi sirkuit digital dan degradasi performa mesin. Melalui kontrak perawatan berkala (Preventive Maintenance) HVAC bersama AUDP, tim teknisi bersertifikasi melakukan pencucian kisi-kisi kondensor dan evaporator, pemantauan tekanan sirkulasi freon (R410A/R32), kalibrasi sensor termostat, serta penggantian filter udara secara berkala. Perawatan terjadwal ini terbukti menurunkan konsumsi daya kompresor hingga 25% dan memperpanjang usia operasional unit AC Split Duct, Cassette, maupun Floor Standing komersial.",
+      en: "Uncontrolled thermal swings and humidity spikes within electronics manufacturing, cleanrooms, and data center server rooms risk hardware throttling and equipment breakdown. Through AUDP's scheduled HVAC Preventive Maintenance contracts, certified engineering technicians perform chemical coil washing, refrigerant operating pressure diagnostics, digital sensor calibration, and periodic high-efficiency air filter replacements. Scheduled maintenance reduces compressor electrical draw by up to 25% and extends the operational longevity of commercial Split Duct, Cassette, and Floor Standing climate units."
+    },
+    image: "/assets/news_hvac.jpg"
+  },
+  {
+    id: "news-6",
+    date: "28 November 2024",
+    category: { id: "Logistik & Kemasan", en: "Packaging & Logistics" },
+    title: {
+      id: "Optimasi Material Kemasan: Cara Tepat Memilih Stretch Film dan Strapping Band untuk Ekspor",
+      en: "Packaging Material Optimization: Selecting Heavy-Duty Stretch Film and Strapping Bands"
+    },
+    summary: {
+      id: "Mencegah kerusakan kargo selama pengiriman darat dan laut melalui standarisasi ketebalan mikron stretch film dan kekuatan tarik tali strapping.",
+      en: "Preventing palletized cargo damage during transit through standardized stretch film micron thickness and high-tensile strapping bands."
+    },
+    content: {
+      id: "Kerusakan barang jadi akibat pergeseran palet saat pengangkutan kontainer laut atau truk logistik sering kali berakar dari ketebalan plastik kemasan yang tidak memenuhi spesifikasi berat muatan. Pemilihan stretch film murni dengan elastisitas tarik hingga 300% dan ketebalan 17 hingga 23 mikron memberikan daya cengkeram optimal tanpa sobek pada sudut karton tajam. Dikombinasikan dengan tali pengikat strapping band PP/PET bermutu tinggi dan klem segel baja, stabilitas susunan palet terjamin aman dari guncangan jalan dan rembesan uap air. AUDP menyediakan pasokan reguler material kemasan industri siap kirim dengan jaminan akurasi berat dan ketebalan.",
+      en: "Finished product damage caused by pallet shifting during containerized ocean freight or long-haul trucking commonly stems from sub-standard packaging consumables mismatched to freight weight. Utilizing virgin linear low-density stretch film offering 300% pre-stretch yield and 17 to 23 micron thickness ensures puncture resistance around acute carton edges. Paired with high-tensile PP/PET strapping bands and galvanized steel seals, palletized loads withstand transport vibrations, moisture, and dust ingress. AUDP delivers continuous bulk shipments of certified industrial packaging consumables with verified micron tolerances."
+    },
+    image: "/assets/news_packaging.jpg"
+  },
+  {
+    id: "news-7",
+    date: "05 Desember 2024",
+    category: { id: "Keselamatan Kerja K3", en: "Occupational Safety (OHS)" },
+    title: {
+      id: "Standarisasi APD Sesuai Regulasi Kemenaker: Helm Proyek, Sepatu Safety, dan Sarung Tangan Tahan Kimia",
+      en: "OHS Compliance Standards: Certified Safety Helmets, Boots, and Chemical-Resistant Gloves"
+    },
+    summary: {
+      id: "Kepatuhan standar perlindungan diri SNI dan EN ISO untuk menekan angka kecelakaan kerja pada lingkungan bengkel fabrikasi dan lini perakitan.",
+      en: "Adhering to certified personal protective standards to eliminate workplace hazards across fabrication workshops and production lines."
+    },
+    content: {
+      id: "Kepatuhan Keselamatan dan Kesehatan Kerja (K3) pada kawasan industri di Cikarang, Karawang, dan Bekasi kini menuntut dokumentasi sertifikasi uji beban yang ketat pada setiap Alat Pelindung Diri. Sepatu safety bertutup baja (steel toe cap) tahan benturan 200 Joule dengan sol antiselip tahan minyak (oil-resistant), helm keselamatan kelas E bersuspensi peredam benturan, serta sarung tangan tahan goresan mekanik (EN 388) merupakan perlengkapan primer wajib bagi teknisi lapangan. PT. Aneka Usaha Dua Putra bermitra dengan prinsipal APD terpercaya untuk menjamin keaslian barang, kenyamanan ergonomis saat dikenakan sepanjang shift kerja, serta kelengkapan dokumen sertifikasi teknis.",
+      en: "Occupational Health and Safety (OHS) regulations across Indonesian industrial hubs require rigorous third-party impact test certifications for all personal protective gear. Heavy-duty safety footwear featuring 200-Joule impact steel toe caps, oil-and-acid resistant outsoles, dielectric Class E safety hard hats with suspension harnesses, and mechanical abrasion-resistant gloves (EN 388) constitute mandatory protection for plant operators. PT. Aneka Usaha Dua Putra collaborates directly with authorized PPE principals to guarantee genuine origin, shift-long ergonomic comfort, and valid compliance documentation."
+    },
+    image: "/assets/news_safety.jpg"
+  },
+  {
+    id: "news-8",
+    date: "14 Januari 2025",
+    category: { id: "Infrastruktur IT", en: "IT Infrastructure" },
+    title: {
+      id: "Membangun Infrastruktur Jaringan Pabrik yang Andal: Pengkabelan Cat6 dan IP CCTV Industri",
+      en: "Building Resilient Factory Networks: Structured Cat6 Cabling and Industrial IP Surveillance"
+    },
+    summary: {
+      id: "Pentingnya instalasi kabel LAN berpelindung (STP/FTP), rak server rackmount, dan kamera pengawas tahan debu (IP67) untuk operasional 24/7.",
+      en: "The necessity of shielded Cat6 networking, rackmount server enclosures, and IP67 industrial surveillance for round-the-clock plant operations."
+    },
+    content: {
+      id: "Otomasi manufaktur modern menuntut jalur komunikasi data yang bebas dari interferensi gelombang elektromagnetik (EMI) dari mesin stamping, inverter, dan motor dinamo. Penerapan kabel jaringan berpelindung ganda (Cat6A SFTP/STP), patch panel berlabel rapi dalam rak server enclosure 19 inci, serta switch manageable bersertifikasi enterprise menjadi tulang punggung kestabilan data produksi. Untuk keamanan fisik, integrasi kamera IP CCTV berstandar proteksi cuaca IP67 dengan teknologi inframerah malam hari dan perekam NVR redundan menjamin seluruh area pabrik terpantau optimal. AUDP menyediakan perangkat keras jaringan lengkap, server storage NAS, dan asistensi teknis pemilihan spesifikasi.",
+      en: "Modern factory automation hinges on high-throughput data highways shielded against electromagnetic interference (EMI) originating from industrial stamping presses and high-horsepower motors. Deploying fully shielded Cat6A SFTP/STP structured cabling, certified patch panels housed in 19-inch rack enclosures, and managed enterprise switches secures deterministic production telemetry. In tandem, high-definition IP surveillance cameras bearing IP67 weather seals, smart infrared arrays, and redundant NVR recording arrays safeguard physical facilities around the clock. AUDP supplies enterprise networking equipment, server NAS hardware, and technical spec-matching support."
+    },
+    image: "/assets/news_it.jpg"
+  },
+  {
+    id: "news-9",
+    date: "03 Februari 2025",
+    category: { id: "Operasional Fasilitas", en: "Facility Operations" },
+    title: {
+      id: "Standar Kebersihan Pabrik dan Efisiensi Konsumsi Chemical Janitorial Komersial",
+      en: "Industrial Sanitation Standards and Commercial Janitorial Chemical Efficiency"
+    },
+    summary: {
+      id: "Panduan memilih cairan pembersih degreaser lantai produksi, alat sanitasi fasilitas, dan tempat sampah pilah untuk audit 5S/5R.",
+      en: "Guidelines for selecting production floor degreasers, sanitation gear, and segregation waste bins to pass 5S corporate audits."
+    },
+    content: {
+      id: "Keberhasilan audit 5S/5R (Ringkas, Rapi, Resik, Rawat, Rajin) pada industri manufaktur presisi bermula dari pemeliharaan kebersihan lantai kerja dan area mesin. Penggunaan chemical pembersih konsentrat tinggi (Heavy Duty Degreaser) mampu melarutkan residu minyak oli hidrolik dan debu karbon tanpa mengikis cat lantai epoxy workshop. Didukung dengan mesin ride-on floor scrubber komersial, kain lap microfiber industri penyerap tinggi, serta tempat sampah pilah limbah B3 berwarna standar, manajemen fasilitas dapat menghemat anggaran pembersihan hingga 30% sekaligus meminimalisir risiko lantai licin bagi para pekerja. AUDP menyediakan paket pengadaan chemical dan perkakas sanitasi fasilitas secara rutin.",
+      en: "Sustaining successful 5S industrial audits across precision engineering plants begins with meticulous floor and machinery hygiene. Heavy-duty concentrated chemical degreasers emulsify tough hydraulic oil leaks and carbon residues without corroding sensitive industrial epoxy floor finishes. Complemented by commercial walk-behind floor scrubbers, high-absorbency microfiber wipers, and color-coded hazardous waste segregation containers, facility departments reduce sanitation expenditures by up to 30% while eliminating slip-and-fall hazards for workshop technicians. AUDP delivers routine procurement schedules for industrial janitorial chemicals and facility supplies."
+    },
+    image: "/assets/news_cleaning.jpg"
+  },
+  {
+    id: "news-10",
+    date: "20 Februari 2025",
+    category: { id: "Manajemen Pasokan", en: "Supply Chain Management" },
+    title: {
+      id: "Konsolidasi Vendor B2B: Cara Mengurangi Biaya Administrasi Pengadaan Pabrik hingga 30%",
+      en: "B2B Vendor Consolidation: Reducing Plant Procurement Overhead by up to 30%"
+    },
+    summary: {
+      id: "Strategi efisiensi tim purchasing dengan menggabungkan pasokan ATK, perkakas teknik, dan perlengkapan umum ke dalam satu mitra rekanan terpercaya.",
+      en: "Procurement efficiency tactics by consolidating stationery, technical consumables, and operational goods under one verified supplier partner."
+    },
+    content: {
+      id: "Banyak perusahaan manufaktur di kawasan industri terbebani oleh tingginya biaya transaksi administratif akibat bertransaksi dengan puluhan vendor kecil untuk item yang berbeda-beda. Melalui model kemitraan terpadu (Vendor Consolidation) bersama PT. Aneka Usaha Dua Putra, seluruh lini kebutuhan rutin—dari alat tulis kantor (ATK), kertas, suku cadang mekanikal, kabel kelistrikan, hingga material kemasan—dapat dipenuhi melalui satu pintu rekanan resmi. Manfaat nyata yang diperoleh meliputi penerbitan e-Faktur Pajak resmi (SPPKP) yang tertib, harga kontrak volume yang lebih kompetitif, respon penawaran dalam 24 jam, serta jadwal pengiriman terkoordinasi yang menghilangkan risiko terhentinya operasional lini produksi.",
+      en: "Many manufacturing plants struggle with heavy administrative overhead caused by transacting with dozens of fragmented micro-vendors for miscellaneous operational items. Through comprehensive Vendor Consolidation with PT. Aneka Usaha Dua Putra, diverse recurring requirements—including corporate stationery, mechanical components, electrical cabling, and warehouse packaging—are fulfilled under one reputable vendor partnership. Key advantages include streamlined official tax invoicing (e-Faktur PKP), competitive bulk contract pricing, 24-hour quotation turnarounds, and synchronized delivery schedules that safeguard manufacturing uptime."
+    },
+    image: "/assets/news_supply.jpg"
   }
 ];
 

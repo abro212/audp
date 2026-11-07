@@ -42,6 +42,15 @@ export const GALLERY_ASSETS: GalleryAsset[] = [
   { category: 'legal', label: 'Surat Pengukuhan PKP', url: '/assets/legal_sppkp.jpg' },
   { category: 'legal', label: 'Surat Keterangan Terdaftar (SKT)', url: '/assets/legal_skt.png' },
 
+  // News & Articles
+  { category: 'products', label: 'Berita: Fabrikasi Panel MDP', url: '/assets/news_panel.jpg' },
+  { category: 'products', label: 'Berita: Tata Udara & AC Industri', url: '/assets/news_hvac.jpg' },
+  { category: 'products', label: 'Berita: Kemasan & Stretch Film', url: '/assets/news_packaging.jpg' },
+  { category: 'products', label: 'Berita: Standarisasi APD K3', url: '/assets/news_safety.jpg' },
+  { category: 'products', label: 'Berita: Jaringan Cat6 & IT Pabrik', url: '/assets/news_it.jpg' },
+  { category: 'products', label: 'Berita: Sanitasi & Chemical Pabrik', url: '/assets/news_cleaning.jpg' },
+  { category: 'products', label: 'Berita: Konsolidasi Vendor B2B', url: '/assets/news_supply.jpg' },
+
   // Branding
   { category: 'branding', label: 'Logo AUDP Emblem', url: '/assets/logo_emblem.png' },
   { category: 'branding', label: 'Logo AUDP Lengkap', url: '/assets/logo_full.png' },
