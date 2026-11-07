@@ -4,7 +4,6 @@ import { User } from 'firebase/auth';
 import { AdminLogin } from './AdminLogin';
 import { DashboardTab } from './tabs/DashboardTab';
 import { ProductsTab } from './tabs/ProductsTab';
-import { ITSolutionsTab } from './tabs/ITSolutionsTab';
 import { ClientsTab } from './tabs/ClientsTab';
 import { NewsTab } from './tabs/NewsTab';
 import { LegalDocsTab } from './tabs/LegalDocsTab';
@@ -13,7 +12,6 @@ import { InquiriesTab } from './tabs/InquiriesTab';
 import { 
   LayoutDashboard, 
   Boxes, 
-  Cpu, 
   Users, 
   Newspaper, 
   FileCheck, 
@@ -68,8 +66,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
 
   const navMenuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'products', label: 'Katalog Produk & Solusi', icon: Boxes },
-    { id: 'it', label: 'Solusi IT & Infrastruktur', icon: Cpu },
+    { id: 'products', label: 'Katalog Produk & Solusi Pasokan', icon: Boxes },
     { id: 'clients', label: 'Klien & Portofolio', icon: Users },
     { id: 'news', label: 'Berita & Artikel', icon: Newspaper },
     { id: 'legal', label: 'Legalitas & Dokumen', icon: FileCheck },
@@ -259,7 +256,7 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({ onExit }) => {
           )}
 
           {activeTab === 'it' && (
-            <ITSolutionsTab />
+            <ProductsTab initialSection="it-solutions" />
           )}
 
           {activeTab === 'clients' && (

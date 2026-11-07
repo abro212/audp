@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Language } from '../types';
 import { companyInfo } from '../data/companyData';
-import { Menu, X, ChevronDown, ChevronRight, Globe, Search, ArrowRight, Cpu, Layers } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, Globe, Search, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   language: Language;
@@ -183,17 +183,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </button>
                   <div className="border-t border-slate-100 my-1" />
                   <button
-                    onClick={() => handleNavClick('it-solutions')}
-                    className="w-full text-left px-4 py-2 text-xs font-bold text-navy-950 hover:bg-slate-50 flex items-center justify-between group"
-                  >
-                    <span className="flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-navy-900" />
-                      <span>Solusi IT & Equipment</span>
-                    </span>
-                    <ArrowRight className="w-3 h-3 text-slate-400 group-hover:text-gold-500 transition-colors" />
-                  </button>
-                  <div className="border-t border-slate-100 my-1" />
-                  <button
                     onClick={() => handleNavClick('products')}
                     className="w-full text-left px-4 py-1.5 text-xs text-slate-600 hover:text-navy-950 hover:bg-slate-50"
                   >
@@ -230,11 +219,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                     Safety Equipment (K3)
                   </button>
                   <button
-                    onClick={() => handleNavClick('products')}
-                    className="w-full text-left px-4 py-1.5 text-xs text-slate-600 hover:text-navy-950 hover:bg-slate-50 flex items-center justify-between"
+                    onClick={() => handleNavClick('it-solutions')}
+                    className="w-full text-left px-4 py-1.5 text-xs text-slate-600 hover:text-navy-950 hover:bg-slate-50"
                   >
-                    <span>Custom Procurement</span>
-                    <Layers className="w-3 h-3 text-slate-400" />
+                    IT Solutions & Equipment
+                  </button>
+                  <button
+                    onClick={() => handleNavClick('products')}
+                    className="w-full text-left px-4 py-1.5 text-xs text-slate-600 hover:text-navy-950 hover:bg-slate-50"
+                  >
+                    Custom Procurement
                   </button>
                 </div>
               )}
@@ -426,21 +420,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={() => handleNavClick('products')}
               className={`flex items-center justify-between w-full px-4 min-h-[44px] rounded-lg text-sm font-semibold transition-colors ${
-                activePage === 'products' ? 'bg-navy-900 text-white' : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
+                activePage === 'products' || activePage === 'it-solutions' ? 'bg-navy-900 text-white' : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
               }`}
             >
               <span>{language === 'id' ? 'Produk & Layanan' : 'Products & Services'}</span>
-              <ChevronRight className={`w-4 h-4 ${activePage === 'products' ? 'text-gold-400' : 'text-slate-400'}`} />
-            </button>
-
-            <button
-              onClick={() => handleNavClick('it-solutions')}
-              className={`flex items-center justify-between w-full px-4 min-h-[44px] rounded-lg text-sm font-semibold transition-colors ${
-                activePage === 'it-solutions' ? 'bg-navy-900 text-white' : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
-              }`}
-            >
-              <span>{language === 'id' ? 'Solusi IT & Equipment' : 'IT Solutions & Equipment'}</span>
-              <ChevronRight className={`w-4 h-4 ${activePage === 'it-solutions' ? 'text-gold-400' : 'text-slate-400'}`} />
+              <ChevronRight className={`w-4 h-4 ${activePage === 'products' || activePage === 'it-solutions' ? 'text-gold-400' : 'text-slate-400'}`} />
             </button>
 
             <button

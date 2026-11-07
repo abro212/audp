@@ -94,7 +94,7 @@ export const DashboardTab: React.FC<DashboardTabProps> = ({
       id: 'it',
       label: 'Solusi IT & Infrastruktur',
       count: itSolutions.length,
-      desc: 'Layanan hardware, server, & jaringan',
+      desc: 'Hardware, server, & jaringan (Katalog Terpadu)',
       icon: Cpu,
       tab: 'it'
     },

@@ -6,13 +6,16 @@ import {
   deleteProduct 
 } from '../../services/adminDataService';
 import { ImageBrowsePicker } from '../components/ImageBrowsePicker';
+import { ITSolutionsTab } from './ITSolutionsTab';
 import { 
   Plus, 
   Edit2, 
   Trash2, 
   Search, 
   Check, 
-  X 
+  X,
+  Boxes,
+  Cpu
 } from 'lucide-react';
 
 const ICON_OPTIONS = [
@@ -27,7 +30,12 @@ const ICON_OPTIONS = [
   'Wind'
 ];
 
-export const ProductsTab: React.FC = () => {
+interface ProductsTabProps {
+  initialSection?: 'catalog' | 'it-solutions';
+}
+
+export const ProductsTab: React.FC<ProductsTabProps> = ({ initialSection = 'catalog' }) => {
+  const [activeSection, setActiveSection] = useState<'catalog' | 'it-solutions'>(initialSection);
   const [products, setProducts] = useState<ProductItem[]>(() => getStoredProducts());
   const [searchTerm, setSearchTerm] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -140,8 +148,41 @@ export const ProductsTab: React.FC = () => {
   return (
     <div className="space-y-6">
       
-      {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+      {/* Sub-navigation Tabs: Gabungan Produk Umum & Solusi IT */}
+      <div className="flex flex-wrap items-center gap-2 bg-white p-2 rounded-2xl border border-slate-200 shadow-xs">
+        <button
+          type="button"
+          onClick={() => setActiveSection('catalog')}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+            activeSection === 'catalog'
+              ? 'bg-slate-900 text-white shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+          }`}
+        >
+          <Boxes className={`w-4 h-4 ${activeSection === 'catalog' ? 'text-amber-400' : 'text-slate-400'}`} />
+          <span>Katalog Produk & Pasokan ({products.length} Kategori)</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setActiveSection('it-solutions')}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+            activeSection === 'it-solutions'
+              ? 'bg-slate-900 text-white shadow-xs'
+              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+          }`}
+        >
+          <Cpu className={`w-4 h-4 ${activeSection === 'it-solutions' ? 'text-amber-400' : 'text-slate-400'}`} />
+          <span>Rincian Spesifikasi IT Solutions & Equipment</span>
+        </button>
+      </div>
+
+      {activeSection === 'it-solutions' ? (
+        <ITSolutionsTab />
+      ) : (
+        <>
+          {/* Header & Controls */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
         <div>
           <h2 className="text-lg font-bold text-slate-900 tracking-tight">
             Katalog Produk & Solusi Pasokan
@@ -465,6 +506,9 @@ export const ProductsTab: React.FC = () => {
 
           </div>
         </div>
+      )}
+
+        </>
       )}
 
     </div>
